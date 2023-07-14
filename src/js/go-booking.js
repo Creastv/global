@@ -43,7 +43,7 @@ const contenterDate = document.querySelector(".from-to-price");
 inputGetTo ? (inputGetTo.disabled = true) : null;
 personalInfo ? personalInfo.classList.add("disabled") : null;
 for (let i = 0; i < extras.length; i++) {
-  // extras[i].parentNode.classList.add("disabled");
+  extras[i].parentNode.classList.add("disabled");
 }
 
 inputGetFrom.addEventListener("change", function () {
