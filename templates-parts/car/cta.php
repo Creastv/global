@@ -12,10 +12,10 @@ $bookLink = get_field( 'lik_do_podstrony_z_rezerwacja', 'options' );
         <?php endif; ?>
         <div class="btn-wraper">
         <?php if($bookLink) : ?>
-        <a href="<?php echo $bookLink; ?>" class="btn">Zarezerwuj</a>
+        <a href="<?php echo $bookLink; ?>" class="btn js-poj" data-id="<?php the_ID(); ?>">Zarezerwuj</a>
         <?php endif; ?>
         <?php if($tel) : ?>
-        <a href="tel:+48530774774" class="btn-revers js-poj" data-id="<?php the_ID(); ?>"><?php echo $tel; ?></a>
+        <a href="tel:+48530774774" class="btn-revers "><?php echo $tel; ?></a>
         <?php endif; ?>
         </div>
     </div>
