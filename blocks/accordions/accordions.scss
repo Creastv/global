@@ -1,0 +1,112 @@
+@import "../../src/css/scss/variable";
+@import "../../src/css/scss/typo";
+@import "../../src/css/scss/global";
+
+.faq__wraper {
+  display: flex;
+  margin-bottom: 50px;
+  padding: 50px 0;
+  gap: 50px;
+  @media #{$sm} {
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .col {
+    width: 100%;
+  }
+}
+.faq {
+  // max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  .accordion {
+    border-top: 1px solid $light;
+    border-bottom: 1px solid $light;
+    margin-top: -1px;
+
+    .question {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 500;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+      margin-bottom: 0px;
+      min-height: 75px;
+      cursor: pointer;
+      transition: all 0.3s;
+      @media #{$sm} {
+        font-size: 16px;
+        line-height: 26px;
+      }
+      span {
+        width: calc(100% - 24px);
+        padding: 10px 50px 10px 20px;
+        position: relative;
+        @media #{$sm} {
+          width: 100%;
+          padding: 10px 50px 10px 10px;
+          position: relative;
+        }
+        &:after {
+          content: "+";
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          right: 15px;
+          display: block;
+          font-size: 64px !important;
+          font-weight: 100 !important;
+          color: $light-black;
+        }
+      }
+      svg {
+        position: absolute;
+        right: 15px;
+        width: 16px;
+        pointer-events: none;
+      }
+    }
+    .answer {
+      border-radius: 6px;
+      height: 0;
+      overflow: hidden;
+      text-align: justify;
+    }
+  }
+  .accordion.active {
+    transition: all 0.1s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-radius: 6px;
+    z-index: 1;
+    background-color: #f6f6f6;
+    border: 1px solid $black;
+
+    .question {
+      border-bottom: 1px solid $light;
+      span {
+        &:after {
+          content: "-";
+        }
+      }
+    }
+    .answer {
+      height: auto;
+      padding: 0 24px 24px;
+    }
+  }
+  ul {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    @media #{$lg} {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+    }
+  }
+}

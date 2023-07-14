@@ -1,0 +1,62 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: $black;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 600;
+  color: $black;
+  margin: 0;
+  br {
+    @media #{$md} {
+      display: none;
+    }
+  }
+}
+.h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 300;
+  @media #{$sm} {
+    font-size: 28px;
+  }
+}
+p,
+li {
+  color: $black2;
+  font-size: 16px;
+}
+a {
+  color: $main;
+  transition: all 0.2s linear;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.entry-header {
+  width: 100%;
+  text-align: center;
+  padding: 100px 0;
+  .entry-title {
+    font-size: 31px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}

@@ -1,0 +1,109 @@
+html {
+  scroll-behavior: smooth;
+  // overflow-x: hidden;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Prompt", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  // padding-top: 188px;
+}
+body.active {
+  overflow: hidden;
+}
+#main {
+  margin-bottom: 50px;
+}
+
+.container {
+  max-width: 1380px;
+  width: 100%;
+  margin: 0 auto;
+  @media #{$md} {
+    width: 100%;
+  }
+}
+
+.container-fluid {
+  max-width: 1580px;
+  width: 100%;
+  margin: 0 auto;
+  @media #{$md} {
+    width: 100%;
+  }
+}
+
+.row {
+  padding-left: 50px;
+  padding-right: 50px;
+  @media #{$sm} {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+#error {
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+
+#go-to-top.active {
+  bottom: 40px;
+  transform: all 0.8s;
+}
+
+#go-to-top {
+  position: fixed;
+  cursor: pointer;
+  z-index: 9;
+  width: 22px;
+  height: 14px;
+  bottom: -100px;
+  right: 20px;
+  transform: all 0.8s;
+  svg {
+    path {
+      fill: $main;
+      transition: all 0.2s liner;
+    }
+    &:hover {
+      path {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.go-pagination {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+}
+.entry-header {
+  #breadcrumbs {
+    * {
+      color: #fff;
+    }
+    a {
+      color: $main;
+    }
+  }
+}
+
+.kontakt-wraper {
+  background-image: url(../img/bg-form.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 30%;
+}

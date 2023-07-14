@@ -1,0 +1,52 @@
+.go-cennik {
+  margin: 50px 0;
+  .title {
+    padding: 20px 0;
+    a {
+      text-decoration: none;
+      h3 {
+        font-size: 21px;
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        p {
+          font-weight: 600;
+          font-size: 12px !important;
+          margin: 0;
+          padding: 0;
+        }
+        span {
+          display: block;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .price {
+    p {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 0px;
+      padding: 0px;
+    }
+    span {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+  td {
+    border-bottom: 1px solid #e2e2e2;
+    vertical-align: center;
+    padding: 20px;
+  }
+}

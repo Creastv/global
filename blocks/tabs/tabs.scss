@@ -1,0 +1,55 @@
+@import "../../src/css/scss/variable";
+#tabs {
+  padding: 30px 0;
+  .tabs__wraper {
+    display: flex;
+    gap: 50px;
+    @media #{$sm} {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+  .nav {
+    width: 30%;
+    @media #{$sm} {
+      width: 100%;
+    }
+    ul {
+      list-style: none;
+      padding: 0px;
+      li {
+        .tab__link {
+          font-size: 16px;
+          font-weight: 400;
+          cursor: pointer;
+          padding: 20px;
+          border-top: 1px solid $light;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          text-decoration: none;
+        }
+        .tab__link.active {
+          font-weight: 700;
+          svg {
+            path {
+              fill: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+  .content__wraper {
+    width: 70%;
+    @media #{$sm} {
+      width: 100%;
+    }
+    .content {
+      display: none;
+    }
+    .content.active {
+      display: block;
+    }
+  }
+}

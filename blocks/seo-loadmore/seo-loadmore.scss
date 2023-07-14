@@ -1,0 +1,25 @@
+@import "../../src/css/scss/variable";
+.go-seo-loadmore__wraper {
+  transition: all 0.3s 0s ease;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  &:after {
+    -webkit-transition: all 0.3s 0s ease;
+    transition: all 0.3s 0s ease;
+    position: absolute;
+    content: "";
+    background: #fff;
+    background: -webkit-gradient(linear, left bottom, left top, from(#fff), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+  }
+}
+.go-seo-loadmore__wraper.seo-open {
+  height: auto !important;
+  &:after {
+    display: none;
+  }
+}

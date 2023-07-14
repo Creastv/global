@@ -1,0 +1,50 @@
+.go-cennik {
+  margin: 50px 0;
+}
+.go-cennik .title {
+  padding: 20px 0;
+}
+.go-cennik .title a {
+  text-decoration: none;
+}
+.go-cennik .title a h3 {
+  font-size: 21px;
+}
+.go-cennik .title ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.go-cennik .title ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.go-cennik .title ul li p {
+  font-weight: 600;
+  font-size: 12px !important;
+  margin: 0;
+  padding: 0;
+}
+.go-cennik .title ul li span {
+  display: block;
+  font-size: 10px;
+}
+.go-cennik .price p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+.go-cennik .price span {
+  font-size: 14px;
+  font-weight: 300;
+}
+.go-cennik td {
+  border-bottom: 1px solid #e2e2e2;
+  vertical-align: center;
+  padding: 20px;
+}/*# sourceMappingURL=cennik.css.map */

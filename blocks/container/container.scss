@@ -1,0 +1,21 @@
+@import "../../src/css/scss/variable";
+
+.wide {
+  width: 100vw;
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+
+  @media #{$sm} {
+    width: 100%;
+    margin-left: initial;
+    left: initial;
+    padding: 0 0px;
+    .container-fluid {
+      padding: 0;
+      .row {
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import "../../src/css/scss/variable";
+
+#localization {
+  padding: 20px 0;
+  margin-top: 30px;
+  border-top: 1px solid $light;
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    @media #{$sm} {
+      flex-wrap: wrap;
+    }
+  }
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    @media #{$sm} {
+      flex-wrap: wrap;
+    }
+    p {
+      width: 25%;
+      @media #{$sm} {
+        width: 100%;
+      }
+    }
+    .localizations {
+      overflow: auto;
+      width: 70%;
+      scrollbar-width: thin; /* "auto" or "thin" */
+      scrollbar-color: $black $light;
+      @media #{$sm} {
+        width: 100%;
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0px;
+      display: flex;
+      li {
+        display: block;
+        white-space: nowrap;
+        a {
+          text-decoration: none;
+          padding: 3px 5px;
+          font-size: 12px;
+          font-weight: 400;
+          color: $black;
+          border: 1px solid $light-black;
+          border-radius: 6px;
+          display: block;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.localizations::-webkit-scrollbar {
+  width: 3px; /* width of the entire scrollbar */
+  height: 7px;
+}
+
+.localizations::-webkit-scrollbar-track {
+  background: $light; /* color of the tracking area */
+}
+
+.localizations::-webkit-scrollbar-thumb {
+  background-color: $black; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  width: 2px;
+  border: 1px solid $light; /* creates padding around scroll thumb */
+  padding-top: 30px;
+}

@@ -1,0 +1,83 @@
+#localization {
+  padding: 20px 0;
+  margin-top: 30px;
+  border-top: 1px solid #f2f2f2;
+}
+#localization .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+  #localization .top {
+    flex-wrap: wrap;
+  }
+}
+#localization .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+  #localization .bottom {
+    flex-wrap: wrap;
+  }
+}
+#localization .bottom p {
+  width: 25%;
+}
+@media only screen and (max-width: 768px) {
+  #localization .bottom p {
+    width: 100%;
+  }
+}
+#localization .bottom .localizations {
+  overflow: auto;
+  width: 70%;
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #000 #f2f2f2;
+}
+@media only screen and (max-width: 768px) {
+  #localization .bottom .localizations {
+    width: 100%;
+  }
+}
+#localization .bottom ul {
+  list-style: none;
+  padding: 0px;
+  display: flex;
+}
+#localization .bottom ul li {
+  display: block;
+  white-space: nowrap;
+}
+#localization .bottom ul li a {
+  text-decoration: none;
+  padding: 3px 5px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  border: 1px solid #3e3e3e;
+  border-radius: 6px;
+  display: block;
+  margin-right: 10px;
+}
+
+.localizations::-webkit-scrollbar {
+  width: 3px; /* width of the entire scrollbar */
+  height: 7px;
+}
+
+.localizations::-webkit-scrollbar-track {
+  background: #f2f2f2; /* color of the tracking area */
+}
+
+.localizations::-webkit-scrollbar-thumb {
+  background-color: #000; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  width: 2px;
+  border: 1px solid #f2f2f2; /* creates padding around scroll thumb */
+  padding-top: 30px;
+}/*# sourceMappingURL=lokalizacja.css.map */

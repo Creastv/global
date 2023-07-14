@@ -1,0 +1,26 @@
+@import "../../src/css/scss/variable";
+
+.b-title {
+  .b-title__h {
+    font-size: 41px;
+    line-height: 47px;
+    margin-bottom: 20px;
+    @media #{$sm} {
+      font-size: 28px;
+      line-height: 34px;
+    }
+    br {
+      @media #{$md} {
+        display: none;
+      }
+    }
+  }
+  .b-title__p {
+    margin-bottom: 50px;
+    br {
+      @media #{$md} {
+        display: none;
+      }
+    }
+  }
+}
