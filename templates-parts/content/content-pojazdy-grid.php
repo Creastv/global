@@ -3,6 +3,7 @@ $imgFutured = get_field( 'zdjecie', get_the_ID() );
 $prices = get_field( 'cena', get_the_ID() );
 $opis = get_field( 'opis', get_the_ID() );
 $liczbaKomentarzy = get_comments_number();
+$linkBooking = get_field( 'button_do_przejscia_do_rezerwacji', 'options' );
 
 $priceFrom = $prices['miesiac'];
 $ofert = $prices['czy_pojazd_jest_objety_promocja'];
@@ -143,7 +144,7 @@ $dopisek = '';
         <span>Cena już od:</span>
         <span class="price"><?php echo $priceFrom; ?></span>
         <?php echo $dopisek;?>
-        <a class="btn-revers btn--small js-poj"data-id="<?php the_ID(); ?>" href="http://localhost/globalelitecar/rezerwacja/">Zarezerwuj</a>
+        <a class="btn-revers btn--small js-poj"data-id="<?php the_ID(); ?>" href="<?php echo $linkBooking; ?>">Zarezerwuj</a>
 
        </div>
         <!-- <a class="read-more " href="<?php the_permalink(); ?>">Czytaj więcej</a> -->

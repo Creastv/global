@@ -89,4 +89,3 @@ if($ofert) {
         <?php get_template_part( 'templates-parts/car/map' ); ?>
     </div>
 </article>
-<?php get_template_part( 'templates-parts/car/modal' ); ?>

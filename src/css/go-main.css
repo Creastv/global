@@ -2460,6 +2460,13 @@ body.active {
   padding: 3px 10px;
   z-index: 3;
 }
+@media only screen and (max-width: 768px) {
+  .car-cart header a .label {
+    font-size: 10px;
+    left: 5px;
+    top: 5px;
+  }
+}
 .car-cart header a .opinie {
   position: absolute;
   right: 10px;
@@ -2469,6 +2476,13 @@ body.active {
   padding: 3px 5px;
   color: #000;
   font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  .car-cart header a .opinie {
+    font-size: 10px;
+    right: 5px;
+    top: 5px;
+  }
 }
 .car-cart header a img {
   display: block;
