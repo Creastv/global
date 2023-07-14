@@ -5,7 +5,7 @@
  $bullets = get_field( 'bullets', 'options' );
  ?>
  <?php  if( !is_single()  ) { ?>
- <div class="h-extra" data-aos="fade-up">
+ <div class="h-extra" >
     <?php if(is_page_template('page-booking.php')) : ?>
         <?php get_template_part( 'templates-parts/booking/booking', 'car-large' ); ?>
     <?php endif; ?>

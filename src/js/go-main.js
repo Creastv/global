@@ -58,14 +58,6 @@
     }
   });
 
-  // footer
-  const calaps = document.querySelectorAll(".calaps");
-  for (let i = 0; i < calaps.length; i++) {
-    calaps[i].querySelector(".calaps__opener").addEventListener("click", function () {
-      calaps[i].classList.toggle("active");
-    });
-  }
-
   // navbarMobile
   const itemSubmenu = document.querySelectorAll(".js-navbar__navigation  .menu-item-has-children");
   for (let i = 0; i < itemSubmenu.length; i++) {
@@ -81,6 +73,15 @@
     });
   }
 })();
+
+// footer
+const calaps = document.querySelectorAll(".calaps");
+console.log(calaps[1].firstChild);
+for (let i = 0; i < calaps.length; i++) {
+  calaps[i].addEventListener("click", function () {
+    calaps[i].classList.toggle("active");
+  });
+}
 
 const pojazdy = document.querySelectorAll(".js-poj");
 for (let i = 0; i < pojazdy.length; i++) {

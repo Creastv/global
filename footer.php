@@ -32,7 +32,7 @@
 </span>
 
 <?php get_template_part( 'templates-parts/car/modal' ); ?>
-
+<script></script>
 <?php wp_footer(); ?>
 </body>
 </html>

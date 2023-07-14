@@ -57,6 +57,6 @@
        <?php  get_template_part('templates-parts/header/header', 'extra'); ?>
        <?php endif; ?>
     </header>
-    <main id="main" data-aos="fade-up" data-aos-delay="300">
+    <main id="main" >
         <div class="container">
             <div class="row">
