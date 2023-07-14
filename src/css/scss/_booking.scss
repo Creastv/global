@@ -95,6 +95,9 @@
   @media #{$md} {
     flex-wrap: wrap;
   }
+  @media #{$sm} {
+    gap: 0px;
+  }
   .booking-page__content {
     width: 60%;
     @media #{$md} {
@@ -106,6 +109,7 @@
     padding: 15px;
     @media #{$md} {
       width: 100%;
+      padding: 0px;
     }
 
     .booking-page__resume__details {
@@ -206,6 +210,9 @@
   .form-steps-wraper {
     position: relative;
     padding-left: 50px;
+    @media #{$sm} {
+      padding-left: 0px;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -214,6 +221,9 @@
       height: 100%;
       width: 1px;
       background-color: $gray;
+      @media #{$sm} {
+        display: none;
+      }
     }
     .step {
       position: relative;
@@ -226,12 +236,20 @@
         height: 20px;
         background-color: $main;
         border-radius: 100%;
+        @media #{$sm} {
+          left: 0px;
+          width: 10px;
+          height: 10px;
+        }
       }
       h3 {
         margin-bottom: 20px;
         margin-top: 30px;
         font-size: 21px;
         font-weight: 600;
+        @media #{$sm} {
+          padding-left: 20px;
+        }
       }
       .step-wraper {
         padding: 20px;
@@ -261,9 +279,15 @@
     gap: 10px;
     .price {
       width: 80px;
+      @media #{$sm} {
+        width: 100px;
+      }
     }
     .desc {
       flex: auto;
+      @media #{$sm} {
+        font-size: 12px;
+      }
     }
     span {
       display: block;
@@ -304,7 +328,22 @@
 }
 
 .page-template-page-booking {
-  .h-extra {
+  .h-extra__bullets {
+    @media #{$sm} {
+      display: none !important;
+    }
+  }
+  .car-price {
+    @media #{$sm} {
+      display: none !important;
+    }
+  }
+  .car-info {
+    @media #{$sm} {
+      display: none !important;
+    }
+  }
+  .content-price {
     @media #{$sm} {
       display: none !important;
     }

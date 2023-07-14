@@ -1537,6 +1537,11 @@ body.active {
     flex-wrap: wrap;
   }
 }
+@media only screen and (max-width: 768px) {
+  .booking-page {
+    gap: 0px;
+  }
+}
 .booking-page .booking-page__content {
   width: 60%;
 }
@@ -1552,6 +1557,7 @@ body.active {
 @media only screen and (max-width: 998px) {
   .booking-page .booking-page__resume {
     width: 100%;
+    padding: 0px;
   }
 }
 .booking-page .booking-page__resume .booking-page__resume__details {
@@ -1641,6 +1647,11 @@ body.active {
   position: relative;
   padding-left: 50px;
 }
+@media only screen and (max-width: 768px) {
+  .form-steps .form-steps-wraper {
+    padding-left: 0px;
+  }
+}
 .form-steps .form-steps-wraper:before {
   content: "";
   position: absolute;
@@ -1649,6 +1660,11 @@ body.active {
   height: 100%;
   width: 1px;
   background-color: #dfdfdf;
+}
+@media only screen and (max-width: 768px) {
+  .form-steps .form-steps-wraper:before {
+    display: none;
+  }
 }
 .form-steps .form-steps-wraper .step {
   position: relative;
@@ -1663,11 +1679,23 @@ body.active {
   background-color: #e11f26;
   border-radius: 100%;
 }
+@media only screen and (max-width: 768px) {
+  .form-steps .form-steps-wraper .step::before {
+    left: 0px;
+    width: 10px;
+    height: 10px;
+  }
+}
 .form-steps .form-steps-wraper .step h3 {
   margin-bottom: 20px;
   margin-top: 30px;
   font-size: 21px;
   font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  .form-steps .form-steps-wraper .step h3 {
+    padding-left: 20px;
+  }
 }
 .form-steps .form-steps-wraper .step .step-wraper {
   padding: 20px;
@@ -1695,8 +1723,18 @@ body.active {
 .extras .extra .price {
   width: 80px;
 }
+@media only screen and (max-width: 768px) {
+  .extras .extra .price {
+    width: 100px;
+  }
+}
 .extras .extra .desc {
   flex: auto;
+}
+@media only screen and (max-width: 768px) {
+  .extras .extra .desc {
+    font-size: 12px;
+  }
 }
 .extras .extra span {
   display: block;
@@ -1734,7 +1772,22 @@ body.active {
 }
 
 @media only screen and (max-width: 768px) {
-  .page-template-page-booking .h-extra {
+  .page-template-page-booking .h-extra__bullets {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .page-template-page-booking .car-price {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .page-template-page-booking .car-info {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .page-template-page-booking .content-price {
     display: none !important;
   }
 }
@@ -1842,6 +1895,11 @@ body.active {
   align-items: center;
   margin-bottom: 10px;
   gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .form-group {
+    flex-wrap: wrap;
+  }
 }
 .form-group .form-control {
   width: 100%;
@@ -2032,6 +2090,11 @@ body.active {
   align-items: center;
   margin-bottom: 10px;
   gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .form-group {
+    flex-wrap: wrap;
+  }
 }
 .form-group .form-control {
   width: 100%;
