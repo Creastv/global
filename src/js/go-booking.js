@@ -56,7 +56,7 @@ inputGetFrom.addEventListener("change", function () {
 
 inputGetTo.addEventListener("change", function () {
   inputGetToDisplay.textContent = inputGetTo.value;
-  inputRentTo.value = inputGetTo.value;
+  // inputRentTo.value = inputGetTo.value;
   if (inputGetTo.value) {
     for (let i = 0; i < extras.length; i++) {
       extras[i].parentNode.classList.remove("disabled");
