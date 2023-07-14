@@ -60,3 +60,11 @@ a {
     color: #fff;
   }
 }
+
+.has-x-large-font-size,
+.has-large-font-size {
+  @media #{$sm} {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}

@@ -79,6 +79,14 @@ a {
   color: #fff;
 }
 
+@media only screen and (max-width: 768px) {
+  .has-x-large-font-size,
+  .has-large-font-size {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

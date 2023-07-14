@@ -79,6 +79,14 @@ a {
   color: #fff;
 }
 
+@media only screen and (max-width: 768px) {
+  .has-x-large-font-size,
+  .has-large-font-size {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -196,6 +204,11 @@ body.active {
   background-image: url(../img/bg-footer.png);
   background-size: cover;
   background-position: center;
+}
+@media only screen and (max-width: 998px) {
+  #footer {
+    background-position: left;
+  }
 }
 #footer * {
   color: #fff;
@@ -345,6 +358,11 @@ body.active {
     height: calc(100% + 50px);
   }
 }
+@media only screen and (max-width: 768px) {
+  .f__ornament {
+    display: none;
+  }
+}
 
 .f__banner {
   position: relative;
@@ -352,6 +370,11 @@ body.active {
   background-color: #171616;
   padding: 20px 20px;
   margin-bottom: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .f__banner {
+    background: none;
+  }
 }
 .f__banner .f__banner__wraper ul {
   padding: 0;
@@ -377,6 +400,12 @@ body.active {
   .f__banner .f__banner__wraper ul li:nth-child(1) {
     width: calc(70% - 20px);
     margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .f__banner .f__banner__wraper ul li:nth-child(1) {
+    width: 90%;
+    margin: 0 auto;
   }
 }
 @media only screen and (max-width: 998px) {

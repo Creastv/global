@@ -5,6 +5,9 @@
   background-image: url(../img/bg-footer.png);
   background-size: cover;
   background-position: center;
+  @media #{$md} {
+    background-position: left;
+  }
   * {
     color: #fff;
   }
@@ -150,6 +153,9 @@
     width: auto;
     height: calc(100% + 50px);
   }
+  @media #{$sm} {
+    display: none;
+  }
 }
 
 .f__banner {
@@ -158,6 +164,9 @@
   background-color: #171616;
   padding: 20px 20px;
   margin-bottom: 50px;
+  @media #{$sm} {
+    background: none;
+  }
   .f__banner__wraper {
     ul {
       padding: 0;
@@ -181,6 +190,10 @@
           @media #{$md} {
             width: calc(70% - 20px);
             margin-bottom: 20px;
+          }
+          @media #{$sm} {
+            width: 90%;
+            margin: 0 auto;
           }
         }
         &:nth-child(2) {
