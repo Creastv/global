@@ -103,6 +103,9 @@
   background-color: $light;
   border-radius: 6px;
   padding: 50px;
+  @media #{$sm} {
+    padding: 20px;
+  }
   .form-group.text-center {
     justify-content: center;
   }
