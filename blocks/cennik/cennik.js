@@ -1,3 +1,4 @@
+document.querySelector("#pojazdy").style.display = "none";
 jQuery(document).ready(function () {
   var oldStart = 0;
   jQuery("#pojazdy").DataTable({
