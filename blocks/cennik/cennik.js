@@ -19,9 +19,9 @@ jQuery(document).ready(function () {
     bLengthChange: false,
     // "scrollY": scrollY + "px",
     // "scrollCollapse": true,
-    // paging: true,
+    paging: false,
     // ordering: true,
-    // info: false,
+    info: false,
 
     searching: false,
 
@@ -41,4 +41,6 @@ jQuery(document).ready(function () {
       }
     }
   });
+  document.querySelector("#pojazdy").style.display = "block";
+  document.querySelector(".loader").style.display = "none";
 });

@@ -95,4 +95,8 @@ tr .child {
 
 td .child {
   padding: 20px !important;
+}
+
+#pojazdy {
+  display: none;
 }/*# sourceMappingURL=cennik.css.map */

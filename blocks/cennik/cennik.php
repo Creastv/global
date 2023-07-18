@@ -21,6 +21,9 @@ $cars = new WP_Query( array(
 ?>
 
 <div class="go-cennik">
+    <div class="loader text-center">
+        <img src="<?php echo get_template_directory_uri() ?>/blocks/cennik/loading.gif">
+    </div>
 <table id="pojazdy" cellspacing="0" class=" table table-hover"  style="width:100%">
 <thead >
   <tr>
