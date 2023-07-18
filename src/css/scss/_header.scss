@@ -215,6 +215,11 @@
 
 .header__cta {
   .btn {
+    font-size: 16px;
+    background-color: #e11f26;
+    color: #fff;
+    padding: 10px 20px;
+
     @media #{$xs} {
       padding: 5px 10px;
       font-size: 14px !important;
