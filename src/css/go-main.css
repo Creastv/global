@@ -2419,6 +2419,7 @@ body.active {
   .car-list .content {
     width: 100%;
     order: 2;
+    padding: 0 15px;
   }
 }
 .car-list .content h2 {
@@ -2450,6 +2451,12 @@ body.active {
 }
 .car-list .content .car-info {
   gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .car-list .content .car-info {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
 }
 .car-list .content .car-info li {
   display: flex;
@@ -2483,6 +2490,12 @@ body.active {
 .car-list .content .car-price {
   gap: 20px;
 }
+@media only screen and (max-width: 768px) {
+  .car-list .content .car-price {
+    gap: 0px;
+    margin-bottom: 10px;
+  }
+}
 .car-list .content .car-price li {
   border-left: 1px solid #f2f2f2;
   padding-left: 20px;
@@ -2507,6 +2520,11 @@ body.active {
 @media only screen and (max-width: 998px) {
   .car-list .content .car-price li p {
     font-size: 18px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .car-list .content .car-price li p {
+    font-size: 14px;
   }
 }
 .car-list .content .car-price li span {
