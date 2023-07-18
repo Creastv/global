@@ -5,10 +5,19 @@
   padding: 20px 0;
 }
 .go-cennik .title a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  gap: 20px;
 }
 .go-cennik .title a h3 {
   font-size: 21px;
+}
+.go-cennik .title .label--table {
+  position: relative;
+  left: initial;
+  top: initial;
+  font-size: 12px;
 }
 .go-cennik .price p {
   font-size: 14px;

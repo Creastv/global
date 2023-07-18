@@ -106,8 +106,7 @@
         height: 3px;
         background-color: $black;
         transition: all 0.3s linear;
-        &:nth-child(1) {
-        }
+
         &:nth-child(2) {
           transform: translate(0, 6px);
         }

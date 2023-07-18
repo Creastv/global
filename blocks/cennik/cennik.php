@@ -4,6 +4,7 @@ $te = get_field('kategorie_aut');
 $linkBooking = get_field( 'button_do_przejscia_do_rezerwacji', 'options' );
 $id = array();
 
+
 foreach( $te as $term ):
         $id[] = $term->term_id; 
 endforeach; 
@@ -39,6 +40,37 @@ $cars = new WP_Query( array(
     $img = get_field( 'zdjecie', get_the_ID() );
     $prices = get_field( 'cena', get_the_ID() );
     $opis = get_field( 'opis', get_the_ID() );
+
+    $ofert = $prices['czy_pojazd_jest_objety_promocja'];
+    $infoPromo = $prices['info_promocji'];
+        
+    if($ofert) {
+        $ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
+        $ofertScal = $prices['wartosci_promocji']['przedzial_czasowy_objety_promocja'];
+
+
+        switch ($ofertScal) {
+            case '1-4 dni':
+                $pr = $prices['1-4_dni'] * $ofertProcent/100;
+                $offertPriceFrom = floor($prices['1-4_dni'] - $pr);
+                break;
+            case '5-14 dni':
+                $pr = $prices['5-14_dni']  * $ofertProcent/100;
+                $offertPriceFrom = floor($prices['5-14_dni'] - $pr);
+                break;
+            case '15+ dni':
+                $pr = $prices['15+_dni']  * $ofertProcent/100;
+                $offertPriceFrom = floor($prices['15+_dni'] - $pr);
+                break;
+            case 'Miesiąc';
+                $pr = $prices['miesiac'] * $ofertProcent/100;
+                $pr = $prices['miesiac'] - $pr;
+                $pr = $pr / 30;
+                $offertPriceFrom = floor($pr);
+            break;
+        }
+    }
+
     ?>
     <tr>
         <td></td>
@@ -46,7 +78,12 @@ $cars = new WP_Query( array(
             <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($img, 'table' ); ?></a>
         </td>
         <td class="title">
-            <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a></br>
+            <a href="<?php the_permalink(); ?>">
+            <h3><?php the_title(); ?></h3>
+             <?php echo $ofert == true ? '<span class="label label--table">Promocja -' . $ofertProcent . '% </span>' : false; ?>
+             </a>
+            </br>
+
             <ul class="table-info">
                 <?php if($opis['moc']) : ?>
                 <li>

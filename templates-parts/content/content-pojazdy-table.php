@@ -51,7 +51,7 @@ if($ofert) {
     }
 }
 
-$dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
+$dopisek = ' <small>Cena przy wynajmie<br> powyżej 30 dni</small>';
  if($ofert){
     if(floor($priceFrom / 30) > $offertPriceFrom  ){
         $priceFrom = '<div><small> ' . floor($priceFrom / 30) . ' zł </small>' . $offertPriceFrom . ' zł </div>';
@@ -66,7 +66,6 @@ $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
 
     }
  }
-
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('car-list'); ?>>
     <header>

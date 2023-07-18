@@ -4,10 +4,19 @@
   .title {
     padding: 20px 0;
     a {
+      display: flex;
+      align-items: center;
       text-decoration: none;
+      gap: 20px;
       h3 {
         font-size: 21px;
       }
+    }
+    .label--table {
+      position: relative;
+      left: initial;
+      top: initial;
+      font-size: 12px;
     }
   }
   .price {
