@@ -19,7 +19,7 @@
 
     <header  id="header" class="js-header" itemscope itemtype="http://schema.org/WPHeader">
         <div id="header-top" >
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <?php get_template_part('templates-parts/header/header', 'contact'); ?>
                 </div>
