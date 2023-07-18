@@ -27,7 +27,7 @@
         </div>
         <div id="header-bottom">
             <div id="navbar" class="js__navbar">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                         <?php get_template_part('templates-parts/header/header', 'brand'); ?>
                         <?php get_template_part('templates-parts/header/header', 'nav'); ?>
