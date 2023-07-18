@@ -812,6 +812,12 @@ body.active {
   border-radius: 6px;
   box-shadow: 0 -20px 30px 0 rgba(0, 0, 0, 0.22);
 }
+@media only screen and (max-width: 768px) {
+  .h-extra .h-extra__form .h-extra__form__wrap {
+    min-height: auto;
+    margin-top: -32px;
+  }
+}
 .h-extra .h-extra__form .h-extra__form__wrap:after {
   content: "";
   position: absolute;
@@ -821,6 +827,11 @@ body.active {
   width: 100%;
   height: 100%;
   background-color: #f3f3f3;
+}
+@media only screen and (max-width: 768px) {
+  .h-extra .h-extra__form .h-extra__form__wrap:after {
+    bottom: -32px;
+  }
 }
 .h-extra .h-extra__bullets {
   background-color: #f3f3f3;
@@ -867,6 +878,54 @@ body.active {
   font-size: 12px;
 }
 
+.h-extra__form__wrap .mobile-toggler-form {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .h-extra__form__wrap .mobile-toggler-form {
+    display: flex !important;
+  }
+}
+.h-extra__form__wrap .mobile-toggler-form > span {
+  font-weight: bold;
+}
+.h-extra__form__wrap .mobile-toggler-form .toggler {
+  position: relative;
+  height: 15px;
+  width: 20px;
+  cursor: pointer;
+}
+.h-extra__form__wrap .mobile-toggler-form .toggler:hover span {
+  background-color: #e11f26;
+}
+.h-extra__form__wrap .mobile-toggler-form .toggler span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #000;
+  transition: all 0.3s linear;
+}
+.h-extra__form__wrap .mobile-toggler-form .toggler span:nth-child(2) {
+  transform: translate(0, 6px);
+}
+.h-extra__form__wrap .mobile-toggler-form .toggler span:nth-child(3) {
+  transform: translate(0, 12px);
+}
+.h-extra__form__wrap form.active {
+  display: block !important;
+}
+.h-extra__form__wrap form {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .h-extra__form__wrap form {
+    display: none !important;
+    margin-top: 20px;
+  }
+}
 .h-extra__form__wrap form ul {
   display: flex;
   gap: 20px;
@@ -875,10 +934,11 @@ body.active {
 @media only screen and (max-width: 768px) {
   .h-extra__form__wrap form ul {
     flex-wrap: wrap;
-    gap: 0px;
   }
 }
 .h-extra__form__wrap form ul li {
+  margin: 0px;
+  padding: 0;
   width: 20%;
   position: relative;
 }

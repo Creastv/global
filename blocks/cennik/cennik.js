@@ -15,7 +15,7 @@ jQuery(document).ready(function () {
     ],
     pageLength: 1000,
     // columns: [null, { orderable: false }, null, null, null, null, null, null, { orderable: false }],
-    columns: [null, null, null, null, null, null, null, null],
+    columns: [null, null, null, null, null, null, null, null, null],
     bLengthChange: false,
     // "scrollY": scrollY + "px",
     // "scrollCollapse": true,

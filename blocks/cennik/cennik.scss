@@ -1,3 +1,4 @@
+@import "../../src/css/scss/variable";
 .go-cennik {
   margin: 50px 0;
   .title {
@@ -8,45 +9,89 @@
         font-size: 21px;
       }
     }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        p {
-          font-weight: 600;
-          font-size: 12px !important;
-          margin: 0;
-          padding: 0;
-        }
-        span {
-          display: block;
-          font-size: 10px;
-        }
-      }
-    }
   }
   .price {
     p {
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 600;
       margin-bottom: 0px;
       padding: 0px;
+      margin: 0;
     }
     span {
       font-size: 14px;
       font-weight: 300;
     }
   }
+  .btn--small {
+    font-size: 12px;
+    padding: 5px 15px;
+  }
   td {
     border-bottom: 1px solid #e2e2e2;
     vertical-align: center;
     padding: 20px;
   }
+}
+.table-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    p {
+      font-weight: 600;
+      font-size: 12px !important;
+      margin: 0;
+      padding: 0;
+    }
+    span {
+      display: block;
+      font-size: 10px;
+    }
+  }
+}
+
+.dtr-details {
+  width: 100%;
+  li {
+    display: flex;
+    justify-content: space-between;
+    &:nth-child(1) {
+      .dtr-title {
+        display: none !important;
+      }
+    }
+    &:last-child {
+      .dtr-title {
+        display: none !important;
+      }
+      .dtr-data {
+        display: block;
+        width: 100%;
+        a {
+          width: 100%;
+          font-size: 18px;
+        }
+      }
+    }
+    .dtr-data {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+tr .child {
+  background-color: $light;
+}
+
+td .child {
+  padding: 20px !important;
 }

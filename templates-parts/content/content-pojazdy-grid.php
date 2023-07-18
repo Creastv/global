@@ -144,9 +144,8 @@ $dopisek = '';
         <span>Cena już od:</span>
         <span class="price"><?php echo $priceFrom; ?></span>
         <?php echo $dopisek;?>
-        <a class="btn-revers btn--small js-poj"data-id="<?php the_ID(); ?>" href="<?php echo $linkBooking; ?>">Zarezerwuj</a>
+        <a class="btn-revers btn--small js-poj" data-id="<?php the_ID(); ?>" href="<?php echo $linkBooking; ?>">Zarezerwuj</a>
 
        </div>
-        <!-- <a class="read-more " href="<?php the_permalink(); ?>">Czytaj więcej</a> -->
     </div>
 </article>

@@ -13,6 +13,14 @@
     <div class="h-extra__form">
         <div class="container">
             <div class="h-extra__form__wrap">
+                <div class="mobile-toggler-form ">
+                    <span>Wyszukiwarka pojazdów</span>
+                    <div class="toggler js-toggler-form">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
                <?php echo do_shortcode('[searchandfilter id="2059"]'); ?>
             </div>
        </div>

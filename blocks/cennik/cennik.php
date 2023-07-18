@@ -1,7 +1,7 @@
 
 <?php 
 $te = get_field('kategorie_aut');
-
+$linkBooking = get_field( 'button_do_przejscia_do_rezerwacji', 'options' );
 $id = array();
 
 foreach( $te as $term ):
@@ -31,6 +31,7 @@ $cars = new WP_Query( array(
     <td><b>+15 dni</b></td>
     <td><b>Miesiąc</b></td>
     <td><b>Kaucja</b></td>
+    <td></td>
   </tr>
 </thead>
 <tbody>
@@ -42,11 +43,11 @@ $cars = new WP_Query( array(
     <tr>
         <td></td>
         <td>
-            <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($img, 'table' ); ?></a><br>
+            <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($img, 'table' ); ?></a>
         </td>
         <td class="title">
             <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a></br>
-            <ul>
+            <ul class="table-info">
                 <?php if($opis['moc']) : ?>
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25.985" height="24.869" viewBox="0 0 25.985 24.869">
@@ -139,6 +140,9 @@ $cars = new WP_Query( array(
             <p><?php echo $prices['kaucja']; ?> zł</p>
             <span>Kaucja</span>
         <?php endif; ?>
+        </td>
+        <td>
+        <a href="<?php echo $linkBooking; ?>" class="btn-revers btn--small js-poj" data-id="<?php the_ID(); ?>">Zarezerwuj</a>
         </td>
     </tr>
     <?php endwhile; wp_reset_query(); ?>

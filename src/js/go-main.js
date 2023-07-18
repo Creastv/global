@@ -72,34 +72,47 @@
       itemSubmenu[i].classList.toggle("active");
     });
   }
+
+  // footer
+  const calaps = document.querySelectorAll(".calaps");
+  console.log(calaps[1].firstChild);
+  for (let i = 0; i < calaps.length; i++) {
+    calaps[i].addEventListener("click", function () {
+      calaps[i].classList.toggle("active");
+    });
+  }
+
+  const pojazdy = document.querySelectorAll(".js-poj");
+  for (let i = 0; i < pojazdy.length; i++) {
+    pojazdy[i].addEventListener("click", (e) => {
+      let id = e.target.getAttribute("data-id");
+      document.cookie = `carID=${id}; path=/`;
+    });
+  }
+
+  if (document.querySelector(".results-display-table")) {
+    document.querySelector(".results-display-table").addEventListener("click", function () {
+      document.cookie = "resultsDisplay=table; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+      location.reload();
+    });
+  }
+  if (document.querySelector(".results-display-grid")) {
+    document.querySelector(".results-display-grid").addEventListener("click", function () {
+      document.cookie = "resultsDisplay=; expires=Fri, 31 Dec 1970 23:59:59 GMT; path=/";
+      location.reload();
+    });
+  }
+
+  // form display
+  if (document.querySelector(".h-extra__form__wrap form")) {
+    setTimeout(function () {
+      document.querySelector(".h-extra__form__wrap form").style.display = "block";
+    }, 200);
+  }
+
+  if (document.querySelector(".js-toggler-form")) {
+    document.querySelector(".js-toggler-form").addEventListener("click", function () {
+      document.querySelector(".h-extra__form__wrap form").classList.toggle("active");
+    });
+  }
 })();
-
-// footer
-const calaps = document.querySelectorAll(".calaps");
-console.log(calaps[1].firstChild);
-for (let i = 0; i < calaps.length; i++) {
-  calaps[i].addEventListener("click", function () {
-    calaps[i].classList.toggle("active");
-  });
-}
-
-const pojazdy = document.querySelectorAll(".js-poj");
-for (let i = 0; i < pojazdy.length; i++) {
-  pojazdy[i].addEventListener("click", (e) => {
-    let id = e.target.getAttribute("data-id");
-    document.cookie = `carID=${id}; path=/`;
-  });
-}
-
-if (document.querySelector(".results-display-table")) {
-  document.querySelector(".results-display-table").addEventListener("click", function () {
-    document.cookie = "resultsDisplay=table; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-    location.reload();
-  });
-}
-if (document.querySelector(".results-display-grid")) {
-  document.querySelector(".results-display-grid").addEventListener("click", function () {
-    document.cookie = "resultsDisplay=; expires=Fri, 31 Dec 1970 23:59:59 GMT; path=/";
-    location.reload();
-  });
-}

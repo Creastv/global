@@ -17,8 +17,5 @@
         <h2 class="entry-title">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h2>
-        <!-- <div class="content__btn ">
-            <a href="<?php the_permalink(); ?>" class="btn-rev"><?php _e( 'Czytaj więcej ', 'go' ); ?></a>
-        </div> -->
     </div>
 </article>
