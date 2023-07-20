@@ -27,7 +27,7 @@ $cars = new WP_Query( array(
 <table id="pojazdy" cellspacing="0" class=" table table-hover"  style="width:100%">
 <thead >
   <tr>
-    <td></td>
+    <!-- <td></td> -->
     <td><b>Pojazd</b></td>
     <td></td>
     <td><b>1-4 dni</b></td>
@@ -76,7 +76,7 @@ $cars = new WP_Query( array(
 
     ?>
     <tr>
-        <td></td>
+        <!-- <td></td> -->
         <td>
             <a href="<?php the_permalink(); ?>"><?php echo wp_get_attachment_image($img, 'table' ); ?></a>
         </td>

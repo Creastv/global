@@ -99,4 +99,35 @@ td .child {
 
 #pojazdy {
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  #pojazdy thead {
+    display: none;
+  }
+  #pojazdy tr {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  #pojazdy tr td {
+    width: calc(33.333% - 20px);
+  }
+  #pojazdy tr td:nth-child(2) {
+    width: 100% !important;
+    padding: 10px;
+  }
+  #pojazdy tr td:nth-child(1) {
+    width: 100% !important;
+    padding: 0px 10px;
+  }
+  #pojazdy tr td:nth-child(1) img {
+    width: 100%;
+    height: auto;
+  }
+  #pojazdy tr td .btn-revers {
+    display: block;
+    margin-top: 7px;
+  }
 }/*# sourceMappingURL=cennik.css.map */
