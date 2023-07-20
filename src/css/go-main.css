@@ -845,7 +845,6 @@ body.active {
   padding-bottom: 50px;
   position: relative;
   position: relative;
-  z-index: 2;
 }
 @media only screen and (max-width: 768px) {
   .h-extra .h-extra__bullets {

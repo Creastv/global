@@ -266,9 +266,9 @@ function register_acf_block_types() {
       'supports' => array( 'align' =>false ),
       'enqueue_assets'    => function(){
         wp_enqueue_script('go-datatable', 'https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js',  array(), '201304510', true );
-        wp_enqueue_script('go-datatableresponsive', 'https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js',  array(), '201304510', true );
+        // wp_enqueue_script('go-datatableresponsive', 'https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js',  array(), '201304510', true );
         wp_enqueue_style( 'go-datatable-css', 'https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css' );
-	      wp_enqueue_style( 'go-datatableresponsive', 'https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css' );
+	      // wp_enqueue_style( 'go-datatableresponsive', 'https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css' );
         wp_enqueue_style( 'go-cennik',  get_template_directory_uri() . '/blocks/cennik/cennik.min.css' );
         wp_enqueue_script('go-cennik', get_template_directory_uri().'/blocks/cennik/cennik.js', array( 'jquery' ),'4', true );
       },
