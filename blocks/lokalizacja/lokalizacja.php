@@ -5,7 +5,7 @@ if($global) :
     $id = 'options';
 endif;
 
-$adres = get_field( 'adres', $id );
+$adres = get_field( 'adres_map', $id );
 $link = get_field( 'link_jak_dojechac', $id );
 if( $link ): 
     $link_url = $link['url'];
@@ -18,12 +18,14 @@ $lokalizacje = get_field( 'lokalizacje', $id );
 
 ?>
 <div id="localization">
+    <?php if(!empty($adres) && !empty($link)) : ?>
     <div class="top">
         <?php echo $adres ? '<p>' . $adres . '</p>': false; ?>
         <?php if($link) { ?>
          <a class="btn-revers" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
         <?php } ?>
     </div>
+    <?php endif; ?>
     <div class="middle">
         <?php echo $map; ?>
     </div>
