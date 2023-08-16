@@ -55,14 +55,20 @@
 }
 #localization .bottom ul li a {
   text-decoration: none;
-  padding: 3px 5px;
-  font-size: 12px;
+  padding: 5px 10px;
+  font-size: 14px;
   font-weight: 400;
-  color: #000;
-  border: 1px solid #3e3e3e;
-  border-radius: 6px;
+  color: #7b7b7b;
+  border: 1px solid #7b7b7b;
+  border-radius: 100px;
   display: block;
   margin-right: 10px;
+}
+#localization .bottom ul li a:hover {
+  transform: translate(0, -3px);
+  color: #fff;
+  background-color: #000;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.24);
 }
 
 .localizations::-webkit-scrollbar {

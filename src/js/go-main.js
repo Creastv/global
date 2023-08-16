@@ -110,9 +110,12 @@
     }, 200);
   }
 
-  if (document.querySelector(".js-toggler-form")) {
-    document.querySelector(".js-toggler-form").addEventListener("click", function () {
-      document.querySelector(".h-extra__form__wrap form").classList.toggle("active");
-    });
+  if (window.screen.width < 768) {
+    if (document.querySelector(".h-extra__form__wrap")) {
+      document.querySelector(".h-extra__form__wrap").addEventListener("click", function () {
+        document.querySelector(".js-toggler-form").classList.toggle("active");
+        document.querySelector(".h-extra__form__wrap form").classList.toggle("active");
+      });
+    }
   }
 })();

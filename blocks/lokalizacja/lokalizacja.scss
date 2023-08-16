@@ -45,14 +45,20 @@
         white-space: nowrap;
         a {
           text-decoration: none;
-          padding: 3px 5px;
-          font-size: 12px;
+          padding: 5px 10px;
+          font-size: 14px;
           font-weight: 400;
-          color: $black;
+          color: $light-black;
           border: 1px solid $light-black;
-          border-radius: 6px;
+          border-radius: 100px;
           display: block;
           margin-right: 10px;
+          &:hover {
+            transform: translate(0, -3px);
+            color: #fff;
+            background-color: $black;
+            box-shadow: 0 5px 10px 0px rgba($black, 0.24);
+          }
         }
       }
     }

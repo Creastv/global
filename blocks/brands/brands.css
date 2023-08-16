@@ -16,7 +16,14 @@
     width: calc(33.333% - 20px);
   }
 }
+.go-brands ul li a {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+}
 .go-brands ul li a:hover {
+  transform: translate(0, -3px);
   opacity: 0.7;
 }
 .go-brands ul li img {

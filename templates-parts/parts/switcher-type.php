@@ -6,7 +6,7 @@ $navigacja = get_field( 'navigacja', 'options' );
     <ul>
     <?php foreach($navigacja as $tax){ ?>
         <li>
-            <a href="<?php echo  $tax['link']['url']; ?>" target="<?php echo $tax['link']['target'] ? $tax['link']['target'] : '_self' ; ?>"><?php echo  $tax['link']['title']; ?></a> /
+            <a href="<?php echo  $tax['link']['url']; ?>" target="<?php echo $tax['link']['target'] ? $tax['link']['target'] : '_self' ; ?>"><?php echo  $tax['link']['title']; ?></a> 
        </li>
     <?php  }; ?>
     </ul>
