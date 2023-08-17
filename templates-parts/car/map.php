@@ -1,5 +1,5 @@
 <?php 
-$adres = get_field( 'adres', 'options' );
+$adres = get_field( 'adres_map', 'options' );
 $link = get_field( 'link_jak_dojechac', 'options' );
 
 if( $link ): 
