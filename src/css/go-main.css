@@ -2744,6 +2744,9 @@ body.active {
   padding: 3px 5px;
   color: #000;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 @media only screen and (max-width: 768px) {
   .car-cart header a .opinie {
@@ -2751,6 +2754,12 @@ body.active {
     right: 5px;
     top: 5px;
   }
+}
+.car-cart header a .opinie .average-rating {
+  margin: 0px;
+}
+.car-cart header a .opinie span {
+  display: none !important;
 }
 .car-cart header a img {
   display: block;

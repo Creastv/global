@@ -330,6 +330,16 @@
           right: 5px;
           top: 5px;
         }
+
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .average-rating {
+          margin: 0px;
+        }
+        span {
+          display: none !important;
+        }
       }
       img {
         display: block;
