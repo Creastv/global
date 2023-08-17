@@ -51,7 +51,8 @@ if($ofert) {
             <div class="opinie">
                  <div class="col-lg-12">
                     <?php
-                    echo do_shortcode('[stars_rating_avg]')
+                    // echo do_shortcode('[stars_rating_avg]');
+                    echo ci_comment_rating_display_average_rating( $post->ID);
                     ?>
                 </div>
             </div>

@@ -72,18 +72,14 @@ $dopisek = ' <small>Cena przy wynajmie<br> powyżej 30 dni</small>';
         <a href="<?php the_permalink(); ?>">
             <?php echo $ofert == true ? '<span class="label">Promocja -' . $ofertProcent . '% </span>' : false; ?>
             <?php echo wp_get_attachment_image( $imgFutured, 'medium' ); ?>
-             <?php if($liczbaKomentarzy > 0) { ?>
-            <span class="opinie">
-                <span> <?php echo $liczbaKomentarzy .'<small> ' .$rewiev . '</small>'; ?></span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="11.202" height="11.197" viewBox="0 0 11.202 11.197">
-                <path id="Shape_924_copy_4" data-name="Shape 924 copy 4" d="M1466.195,744.539a1.061,1.061,0,0,1-.377.514c-.736.67-1.469,1.343-2.207,2.011a.147.147,0,0,0-.039.169q.344,1.575.688,3.15a.625.625,0,0,1-.511.809.616.616,0,0,1-.423-.118q-.946-.592-1.893-1.182c-.247-.154-.5-.305-.739-.464a.155.155,0,0,0-.195,0q-1.318.829-2.641,1.651a.6.6,0,0,1-.939-.62c.182-.867.373-1.731.561-2.6.046-.211.09-.422.14-.632a.156.156,0,0,0-.053-.175q-1.178-1.071-2.353-2.149a.615.615,0,0,1-.194-.657.569.569,0,0,1,.5-.443c.2-.027.406-.043.609-.063l1.86-.177c.225-.021.45-.043.675-.06a.156.156,0,0,0,.149-.117c.4-.988.808-1.974,1.21-2.962a.6.6,0,0,1,.541-.427.586.586,0,0,1,.6.409q.549,1.339,1.1,2.679c.044.108.083.219.135.323a.166.166,0,0,0,.107.084c.366.041.732.073,1.1.108l1.588.151c.159.015.319.027.478.048a.583.583,0,0,1,.512.459c0,.01.013.017.02.025Z" transform="translate(-1454.992 -739.999)" fill="#f5cb24"/>
-                </svg>
-            </span>
-            <?php } ?>
+           
         </a>
     </header>
     <div class="content">
+        <div class="title">
         <h2 class="entry-title"><a class="js-poj" data-id="<?php the_ID(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?> </a></h2>
+        <?php    echo ci_comment_rating_display_average_rating( $post->ID); ?>
+        </div>
         <ul class="car-info">
         <?php if($opis['moc']) : ?>
             <li>

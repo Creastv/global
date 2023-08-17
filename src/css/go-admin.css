@@ -753,9 +753,21 @@ body.active {
     padding: 0 15px;
   }
 }
+.car-list .content .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.car-list .content .title .average-rating {
+  font-size: 12px;
+}
+.car-list .content .title .average-rating .s {
+  font-size: 16px;
+}
 .car-list .content h2 {
   display: block;
-  width: 100%;
+  flex: auto;
   font-size: 24px;
   line-height: normal;
   color: #000;

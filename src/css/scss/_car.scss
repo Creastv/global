@@ -326,12 +326,32 @@
           font-weight: 700;
           font-size: 18px;
         }
-        > p + p {
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          width: 80px;
+        .comment-author {
+          float: left;
         }
+        .stars {
+          float: right;
+          padding: 0px;
+          margin: 0px;
+          text-align: right;
+          span {
+            color: #ffbc00;
+            font-size: 16px;
+          }
+        }
+        .stars + p {
+          margin-top: 30px;
+          clear: both;
+        }
+        // > p + p {
+        //   position: absolute;
+        //   top: 10px;
+        //   right: 10px;
+        //   width: 150px;
+        //   span {
+        //     text-align: right;
+        //   }
+        // }
         p {
           font-size: 12px;
           line-height: 16px;

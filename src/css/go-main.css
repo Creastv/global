@@ -2520,9 +2520,21 @@ body.active {
     padding: 0 15px;
   }
 }
+.car-list .content .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.car-list .content .title .average-rating {
+  font-size: 12px;
+}
+.car-list .content .title .average-rating .s {
+  font-size: 16px;
+}
 .car-list .content h2 {
   display: block;
-  width: 100%;
+  flex: auto;
   font-size: 24px;
   line-height: normal;
   color: #000;
@@ -2865,13 +2877,13 @@ body.active {
 #localization {
   padding: 20px 0;
   margin-top: 30px;
-  border-top: 1px solid #f2f2f2;
 }
 #localization .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  border-top: 1px solid #f2f2f2;
 }
 @media only screen and (max-width: 768px) {
   #localization .top {
@@ -3283,11 +3295,22 @@ body.active {
   font-weight: 700;
   font-size: 18px;
 }
-.car-opinions ul li .comment-body > p + p {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 80px;
+.car-opinions ul li .comment-body .comment-author {
+  float: left;
+}
+.car-opinions ul li .comment-body .stars {
+  float: right;
+  padding: 0px;
+  margin: 0px;
+  text-align: right;
+}
+.car-opinions ul li .comment-body .stars span {
+  color: #ffbc00;
+  font-size: 16px;
+}
+.car-opinions ul li .comment-body .stars + p {
+  margin-top: 30px;
+  clear: both;
 }
 .car-opinions ul li .comment-body p {
   font-size: 12px;
