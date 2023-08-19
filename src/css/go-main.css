@@ -756,6 +756,9 @@ body.active {
 .header__conatact ul li a:hover {
   color: #e11f26;
 }
+.header__conatact ul li a:hover span {
+  color: #e11f26 !important;
+}
 
 .header__cookis-bar {
   position: relative;

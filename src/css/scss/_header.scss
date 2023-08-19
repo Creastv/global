@@ -322,6 +322,9 @@
       a {
         &:hover {
           color: $main;
+          span {
+            color: $main !important;
+          }
         }
       }
     }
