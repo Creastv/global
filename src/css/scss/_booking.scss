@@ -120,6 +120,8 @@
     @media #{$md} {
       order: 1;
       margin-top: -100px;
+      position: relative;
+      z-index: 999999;
     }
 
     .booking-page__resume__details {

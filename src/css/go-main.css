@@ -1817,6 +1817,8 @@ body.active {
   .booking-page .booking-page__resume {
     order: 1;
     margin-top: -100px;
+    position: relative;
+    z-index: 999999;
   }
 }
 .booking-page .booking-page__resume .booking-page__resume__details {

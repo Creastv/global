@@ -37,7 +37,7 @@ if($ofert) {
 $dopisek = '';
  if($ofert){
     if(floor($priceFrom / 30) > $offertPriceFrom  ){
-        $priceFrom = '<div><small> ' . floor($priceFrom / 30) . '<span> zł</span></small>' . $offertPriceFrom . ' zł </div>';
+        $priceFrom = '<div><small> ' . floor($priceFrom / 30) . '<span> zł</span></small>' . $offertPriceFrom . '<span> zł</span> </div>';
         $dopisek = ' <small>Cena przy wynajmie powyżej 30 dni</small>';
     } else {
         $priceFrom = floor($priceFrom / 30) . '<span> zł</span>';
