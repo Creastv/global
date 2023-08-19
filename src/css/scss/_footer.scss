@@ -37,6 +37,7 @@
     &:last-child {
       .calaps__opener {
         @media #{$sm} {
+          cursor: pointer;
           border-bottom: 1px solid #3e3e3e;
         }
       }

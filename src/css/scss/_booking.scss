@@ -43,7 +43,7 @@
     content: "";
     position: absolute;
     z-index: 0;
-    border: 3px dashed $gray;
+    border: 2px dashed $gray;
     border-radius: 6px;
   }
   .booking-car__wraper {
@@ -123,8 +123,8 @@
     }
 
     .booking-page__resume__details {
-      box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05102);
-      border: 1px solid $gray;
+      box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.09102);
+      // border: 1px solid $gray;
       border-radius: 6px;
       padding: 20px;
       margin-bottom: 20px;
