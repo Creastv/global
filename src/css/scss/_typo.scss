@@ -45,6 +45,11 @@ small {
   line-height: 1.2;
   display: block;
 }
+b,
+strong {
+  color: $black;
+  font-weight: 500;
+}
 li {
   font-size: 14px;
 }

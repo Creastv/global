@@ -63,6 +63,12 @@ small {
   display: block;
 }
 
+b,
+strong {
+  color: #22242c;
+  font-weight: 500;
+}
+
 li {
   font-size: 14px;
 }
@@ -3255,7 +3261,9 @@ body.active {
   padding: 20px;
 }
 .car-cta .cta-wraper p {
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
   margin-top: 0px;
 }
 .car-cta .btn-wraper {
@@ -3345,6 +3353,7 @@ body.active {
   padding: 0;
   font-size: 21px;
   font-weight: 600;
+  color: #22242c;
 }
 .car-info-price .car-price .car-prices li span {
   width: 100%;
@@ -3380,6 +3389,7 @@ body.active {
   padding: 0;
   font-size: 16px;
   font-weight: 600;
+  color: #22242c;
 }
 
 .car-opinions {
