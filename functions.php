@@ -71,12 +71,12 @@ function filter_plugin_updates( $value ) {
 function ka_override_MCE_options($init)
   {
     $custom_colors = '
-          "575289", "Main color",
-          "9df7de", "Main 2 color",
-          "ffe681", "Main 3 color",
-          "0d0b1e", "Black",
+          "e11f26", "Main color",
+          "111111", "Main 2 color",
+          "7b7b7b", "Main 3 color",
+          "dfdfdf", "Black",
           "545454", "Light black",
-          "eeeef0", "Gray",
+          "#f2f2f2", "Gray",
           "d7d7d7", "Gary dark",
       ';
     // build color grid palette

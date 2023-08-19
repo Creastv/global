@@ -778,9 +778,8 @@ body.active {
     gap: 10px;
   }
 }
-.header__cookis-bar .header__cookis-bar__wraper * {
-  font-size: 12px;
-  color: #fff !important;
+.header__cookis-bar .header__cookis-bar__wraper a {
+  color: #e11f26 !important;
 }
 .header__cookis-bar .header__cookis-bar__wraper p {
   margin: 0;
@@ -2534,6 +2533,7 @@ body.active {
 }
 .car-list .content .title .average-rating .s {
   font-size: 16px;
+  color: #ffbc00;
 }
 .car-list .content h2 {
   display: block;
@@ -3000,6 +3000,9 @@ body.active {
     width: 100%;
   }
 }
+.single-car header .h-right a {
+  border: none !important;
+}
 .single-car header .h-left__top {
   display: flex;
   flex-wrap: wrap;
@@ -3026,7 +3029,7 @@ body.active {
 }
 .single-car header .tax-typ {
   border: 1px solid #7b7b7b;
-  border-radius: 6px;
+  border-radius: 100px;
   padding: 3px 10px;
   z-index: 3;
   opacity: 0.5;
@@ -3173,6 +3176,7 @@ body.active {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
   gap: 15px;
 }
 

@@ -16,7 +16,7 @@ endif;
          <?php echo $info; ?>
         <?php endif; ?>
         <?php if($link ) : ?>
-        <a class="btn btn--small" href="<?php echo esc_url( $link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+        <a class="" href="<?php echo esc_url( $link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
         <?php endif; ?>
     </div>
     <span class="close-button" onclick="closeModal()">&#x2716;</span>

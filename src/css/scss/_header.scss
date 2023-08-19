@@ -346,9 +346,12 @@
       flex-wrap: wrap;
       gap: 10px;
     }
+    a {
+      color: $main !important;
+    }
     * {
-      font-size: 12px;
-      color: #fff !important;
+      // font-size: 12px;
+      // color: #fff;
     }
     p {
       margin: 0;

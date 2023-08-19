@@ -15,6 +15,11 @@
         width: 100%;
       }
     }
+    .h-right {
+      a {
+        border: none !important;
+      }
+    }
     .h-left__top {
       display: flex;
       flex-wrap: wrap;
@@ -39,7 +44,7 @@
     }
     .tax-typ {
       border: 1px solid $light-black;
-      border-radius: 6px;
+      border-radius: 100px;
       padding: 3px 10px;
       z-index: 3;
       opacity: 0.5;
@@ -185,6 +190,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
     gap: 15px;
   }
 }
