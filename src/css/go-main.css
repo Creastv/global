@@ -529,6 +529,7 @@ body.active {
 @media only screen and (max-width: 1300px) and (max-width: 768px) {
   .navbar__navigation {
     width: 100%;
+    transform: translate(0, -200%);
   }
 }
 @media only screen and (max-width: 1300px) {
@@ -3004,6 +3005,11 @@ body.active {
   align-items: flex-end;
   gap: 10px;
 }
+@media only screen and (max-width: 768px) {
+  .car-cart .content .top .price {
+    gap: 5px;
+  }
+}
 .car-cart .content .top .price span {
   font-size: 14px;
   line-height: normal;
@@ -3013,6 +3019,12 @@ body.active {
   justify-content: center;
   gap: 10px;
   align-items: flex-end;
+}
+@media only screen and (max-width: 768px) {
+  .car-cart .content .top .price div {
+    gap: 0px;
+    flex-wrap: wrap;
+  }
 }
 .car-cart .content .top .price div small {
   display: block;
