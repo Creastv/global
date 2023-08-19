@@ -467,6 +467,7 @@ body.active {
   position: relative;
   width: 100%;
   background-color: #1e2029;
+  overflow: hidden;
 }
 #header-bottom .row {
   display: flex;
@@ -528,6 +529,10 @@ body.active {
 }
 @media only screen and (max-width: 1300px) and (max-width: 768px) {
   .navbar__navigation {
+    max-width: 100%;
+    width: 100%;
+    right: initial;
+    left: 0;
     width: 100%;
     transform: translate(0, -200%);
   }
@@ -1692,12 +1697,6 @@ body.active {
   height: 100%;
   background-color: #f3f3f3;
 }
-@media only screen and (max-width: 998px) {
-  .h-extra__car {
-    display: none;
-  }
-}
-
 .booking-car {
   position: relative;
   min-height: 100px;
@@ -1768,6 +1767,11 @@ body.active {
   margin-bottom: 15px;
   position: relative;
 }
+@media only screen and (max-width: 998px) {
+  .booking-car--small {
+    display: none;
+  }
+}
 .booking-car--small:after {
   left: 0;
   top: 0;
@@ -1821,7 +1825,8 @@ body.active {
     z-index: 999999;
   }
 }
-.booking-page .booking-page__resume .booking-page__resume__details {
+
+.booking-page__resume__details {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.09102);
   border-radius: 6px;
   padding: 20px;
@@ -1829,13 +1834,13 @@ body.active {
   background: #fff;
   position: relative;
 }
-.booking-page .booking-page__resume .booking-page__resume__details .box {
+.booking-page__resume__details .box {
   border: 1px solid #dfdfdf;
   border-radius: 6px;
   padding: 15px;
   margin-bottom: 15px;
 }
-.booking-page .booking-page__resume .booking-page__resume__details .box .item {
+.booking-page__resume__details .box .item {
   border-bottom: 1px dashed #dfdfdf;
   padding: 10px;
   display: flex;
@@ -1843,29 +1848,29 @@ body.active {
   align-items: center;
   gap: 10px;
 }
-.booking-page .booking-page__resume .booking-page__resume__details .box .item:last-child {
+.booking-page__resume__details .box .item:last-child {
   border: 0;
 }
-.booking-page .booking-page__resume .booking-page__resume__details .box .item span b {
+.booking-page__resume__details .box .item span b {
   font-weight: 500;
   display: block;
   white-space: nowrap;
 }
-.booking-page .booking-page__resume .booking-page__resume__details .box .price-value,
-.booking-page .booking-page__resume .booking-page__resume__details .box .extra-item__price-total {
+.booking-page__resume__details .box .price-value,
+.booking-page__resume__details .box .extra-item__price-total {
   font-size: 21px;
   font-weight: 500;
 }
-.booking-page .booking-page__resume .booking-page__resume__details .extra-item span {
+.booking-page__resume__details .extra-item span {
   font-size: 14px;
 }
-.booking-page .booking-page__resume .booking-page__resume__details .extra-item__price span {
+.booking-page__resume__details .extra-item__price span {
   font-weight: 500;
   display: block;
   white-space: nowrap;
 }
-.booking-page .booking-page__resume .booking-page__resume__details .from-to-price .price span:nth-child(1),
-.booking-page .booking-page__resume .booking-page__resume__details .extras .extra-item--price span:nth-child(1) {
+.booking-page__resume__details .from-to-price .price span:nth-child(1),
+.booking-page__resume__details .extras .extra-item--price span:nth-child(1) {
   font-size: 18px;
 }
 
@@ -2092,6 +2097,24 @@ body.active {
   position: absolute;
   top: 0px;
   left: -30px;
+}
+
+.mobile-total-resumen {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .mobile-total-resumen {
+    display: block;
+  }
+}
+
+.send-form:before {
+  display: none;
+}
+
+.send-form.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .btn {

@@ -48,7 +48,6 @@ $kaucja = $prices['kaucja'];
             <span class="extra-item__price-total"> 0 zł</span>
         </div>
     </div>
-    
 </div>
 <?php if(isset($_COOKIE['carID'])) : ?>
 <div class="total-price">

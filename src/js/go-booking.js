@@ -36,6 +36,7 @@ const inputGetTo = document.querySelector("#drop-off");
 
 const inputGetFromDisplay = document.querySelector(".from-value b");
 const inputGetToDisplay = document.querySelector(".to-value b");
+const zgody = document.querySelector(".send-form");
 
 // inputGetFromDisplay.textContent = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 // inputGetToDisplay.textContent = tomorrow.getFullYear() + "-" + (tomorrow.getMonth() + 1) + "-" + tomorrow.getDate();
@@ -43,6 +44,7 @@ const inputGetToDisplay = document.querySelector(".to-value b");
 const contenterDate = document.querySelector(".from-to-price");
 inputGetTo ? (inputGetTo.disabled = true) : null;
 personalInfo ? personalInfo.classList.add("disabled") : null;
+zgody ? zgody.classList.add("disabled") : null;
 for (let i = 0; i < extras.length; i++) {
   extras[i].parentNode.classList.add("disabled");
 }
@@ -62,6 +64,7 @@ inputGetTo.addEventListener("change", function () {
     for (let i = 0; i < extras.length; i++) {
       extras[i].parentNode.classList.remove("disabled");
       personalInfo.classList.remove("disabled");
+      zgody.classList.remove("disabled");
     }
   }
   days();
@@ -191,4 +194,9 @@ for (let i = 0; i < closers.length; i++) {
     e.target.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove("active");
     document.body.classList.remove("active");
   });
+}
+
+if (window.innerWidth < 768) {
+  jQuery(".booking-page__resume__details").detach().appendTo(".resumen");
+  jQuery(".total-price").detach().appendTo(".resumen-price");
 }

@@ -9,6 +9,7 @@
   position: relative;
   width: 100%;
   background-color: #1e2029;
+  overflow: hidden;
 
   .row {
     display: flex;
@@ -67,6 +68,10 @@
     height: 100vh;
     background-color: $black;
     @media #{$sm} {
+      max-width: 100%;
+      width: 100%;
+      right: initial;
+      left: 0;
       width: 100%;
       transform: translate(0, -200%);
     }

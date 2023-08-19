@@ -12,7 +12,7 @@
     background-color: #f3f3f3;
   }
   @media #{$md} {
-    display: none;
+    // display: none;
   }
 }
 
@@ -83,6 +83,9 @@
 .booking-car--small {
   margin-bottom: 15px;
   position: relative;
+  @media #{$md} {
+    display: none;
+  }
   &:after {
     left: 0;
     top: 0;
@@ -123,64 +126,63 @@
       position: relative;
       z-index: 999999;
     }
-
-    .booking-page__resume__details {
-      box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.09102);
-      // border: 1px solid $gray;
-      border-radius: 6px;
-      padding: 20px;
-      margin-bottom: 20px;
-      background: #fff;
-      position: relative;
-      .box {
-        border: 1px solid $gray;
-        border-radius: 6px;
-        padding: 15px;
-        margin-bottom: 15px;
-        .item {
-          border-bottom: 1px dashed $gray;
-          padding: 10px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 10px;
-          &:last-child {
-            border: 0;
-          }
-          span {
-            b {
-              font-weight: 500;
-              display: block;
-
-              white-space: nowrap;
-            }
-          }
-        }
-
-        .price-value,
-        .extra-item__price-total {
-          font-size: 21px;
-          font-weight: 500;
-        }
+  }
+}
+.booking-page__resume__details {
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.09102);
+  // border: 1px solid $gray;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  position: relative;
+  .box {
+    border: 1px solid $gray;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    .item {
+      border-bottom: 1px dashed $gray;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      &:last-child {
+        border: 0;
       }
-      .extra-item {
-        span {
-          font-size: 14px;
-        }
-      }
-      .extra-item__price {
-        span {
+      span {
+        b {
           font-weight: 500;
           display: block;
 
           white-space: nowrap;
         }
       }
-      .from-to-price .price span:nth-child(1),
-      .extras .extra-item--price span:nth-child(1) {
-        font-size: 18px;
-      }
     }
+
+    .price-value,
+    .extra-item__price-total {
+      font-size: 21px;
+      font-weight: 500;
+    }
+  }
+  .extra-item {
+    span {
+      font-size: 14px;
+    }
+  }
+  .extra-item__price {
+    span {
+      font-weight: 500;
+      display: block;
+
+      white-space: nowrap;
+    }
+  }
+  .from-to-price .price span:nth-child(1),
+  .extras .extra-item--price span:nth-child(1) {
+    font-size: 18px;
   }
 }
 .deposit {
@@ -404,4 +406,21 @@
       }
     }
   }
+}
+
+.mobile-total-resumen {
+  display: none;
+  @media #{$sm} {
+    display: block;
+  }
+}
+.send-form {
+  &:before {
+    display: none;
+  }
+}
+
+.send-form.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
