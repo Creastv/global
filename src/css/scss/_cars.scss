@@ -351,19 +351,21 @@
   }
   .content {
     padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
     // align-items: center;
     @media #{$sm} {
       flex-wrap: wrap;
     }
-    h2 {
+    h3 {
+      text-align: center;
       display: block;
       width: 100%;
-      font-size: 21px;
+      font-size: 18px;
+      font-weight: 700;
       line-height: normal;
       color: $black;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       a {
         text-decoration: none;
         color: $black;
@@ -372,17 +374,19 @@
         line-height: 1.1;
       }
     }
-    .left {
-      width: 50%;
-      @media #{$sm} {
-        width: 100%;
-      }
+    .bottom {
+      text-align: center;
       ul {
         margin: 0 0 10px 0;
         padding: 0;
         list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
 
         li {
+          text-align: left;
+          width: 50%;
           display: flex;
           align-items: center;
           gap: 15px;
@@ -402,36 +406,45 @@
           }
         }
       }
+      a {
+        display: inline-block;
+        text-align: center;
+      }
     }
-    .right {
-      width: 50%;
+    .top {
       text-align: center;
-      @media #{$sm} {
-        width: 100%;
-      }
-      span {
-        display: block;
-        font-size: 12px;
-        margin-bottom: 10px;
-        line-height: normal;
-        display: block;
-      }
+      margin-bottom: 20px;
       .price {
         font-size: 31px;
         letter-spacing: 1.1px;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 1;
         color: $main;
         margin: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 10px;
+        span {
+          font-size: 14px;
+          // margin-bottom: 10px;
+          line-height: normal;
+        }
         div {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          align-items: flex-end;
+
           small {
             display: block;
-            margin-top: 10px;
+            // margin-top: 10px;
             font-size: 14px !important;
             line-height: 0px !important;
             color: $light-black;
             opacity: 0.4;
             text-decoration: line-through;
+            margin: 0;
           }
         }
       }

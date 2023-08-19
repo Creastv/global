@@ -37,18 +37,18 @@ if($ofert) {
 $dopisek = '';
  if($ofert){
     if(floor($priceFrom / 30) > $offertPriceFrom  ){
-        $priceFrom = '<div><small> ' . floor($priceFrom / 30) . ' zł </small>' . $offertPriceFrom . ' zł </div>';
-        $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
+        $priceFrom = '<div><small> ' . floor($priceFrom / 30) . '<span> zł</span></small>' . $offertPriceFrom . ' zł </div>';
+        $dopisek = ' <small>Cena przy wynajmie powyżej 30 dni</small>';
     } else {
-        $priceFrom = floor($priceFrom / 30) . ' zł';
-        $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
+        $priceFrom = floor($priceFrom / 30) . '<span> zł</span>';
+        $dopisek = '<small>Cena przy wynajmie powyżej 30 dni</small>';
     }
  } else {
      if(is_numeric($priceFrom)){
-        $priceFrom = floor($priceFrom / 30) . ' zł';
-        $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
+        $priceFrom = floor($priceFrom / 30) . '<span> zł</span>';
+        $dopisek = '<small>Cena przy wynajmie powyżej 30 dni</small>';
     } else {
-        $priceFrom = $prices['1-4_dni'] . ' zł';
+        $priceFrom = $prices['1-4_dni'] . '<span> zł</span>';
         $dopisek = ' ';
     }
  }
@@ -59,18 +59,18 @@ $dopisek = '';
         <a href="<?php the_permalink(); ?>">
             <?php echo $ofert == true ? '<span class="label">Promocja -' . $ofertProcent . '% </span>' : false; ?>
             <?php echo wp_get_attachment_image( $imgFutured, 'medium' ); ?>
-           
-            
-                <?php  echo ci_comment_rating_display_cart( $post->ID); ?>
-            
-       
+            <?php  echo ci_comment_rating_display_cart( $post->ID); ?>
         </a>
     </header>
     <div class="content">
-        <h2 class="entry-title">
+        <h3 class="entry-title">
             <a class="js-poj" data-id="<?php the_ID(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-       </h2>
-       <div class="left">
+       </h3>
+       <div class="top">
+            <span class="price"><span>od </span> <?php echo $priceFrom; ?></span>
+            <?php echo $dopisek;?>
+       </div>
+       <div class="bottom">
         <ul>
                 <?php if($opis['moc']) : ?>
                 <li>
@@ -135,14 +135,8 @@ $dopisek = '';
                 </li>
                 <?php endif; ?>
             </ul>
-
+            <a class="btn-revers js-poj" data-id="<?php the_ID(); ?>" href="<?php echo $linkBooking; ?>">Zarezerwuj</a>
        </div>
-       <div class="right">
-        <span>Cena już od:</span>
-        <span class="price"><?php echo $priceFrom; ?></span>
-        <?php echo $dopisek;?>
-        <a class="btn-revers btn--small js-poj" data-id="<?php the_ID(); ?>" href="<?php echo $linkBooking; ?>">Zarezerwuj</a>
-
-       </div>
+       
     </div>
 </article>

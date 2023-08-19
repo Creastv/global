@@ -1975,7 +1975,7 @@ body.active {
 .btn {
   font-size: 21px;
   background-color: #e11f26;
-  border: 1px solid #fff;
+  border: 1px solid #e11f26;
   color: #fff;
   padding: 10px 20px;
   border-radius: 6px;
@@ -2012,7 +2012,7 @@ body.active {
   background-color: transparent;
   border: 1px solid #e11f26;
   color: #e11f26;
-  padding: 15px 30px;
+  padding: 8px 25px;
   border-radius: 6px;
   text-decoration: none;
   transition: 0.3s linear;
@@ -2175,7 +2175,7 @@ body.active {
 .btn {
   font-size: 21px;
   background-color: #e11f26;
-  border: 1px solid #fff;
+  border: 1px solid #e11f26;
   color: #fff;
   padding: 10px 20px;
   border-radius: 6px;
@@ -2212,7 +2212,7 @@ body.active {
   background-color: transparent;
   border: 1px solid #e11f26;
   color: #e11f26;
-  padding: 15px 30px;
+  padding: 8px 25px;
   border-radius: 6px;
   text-decoration: none;
   transition: 0.3s linear;
@@ -2772,100 +2772,106 @@ body.active {
 }
 .car-cart .content {
   padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
 }
 @media only screen and (max-width: 768px) {
   .car-cart .content {
     flex-wrap: wrap;
   }
 }
-.car-cart .content h2 {
+.car-cart .content h3 {
+  text-align: center;
   display: block;
   width: 100%;
-  font-size: 21px;
+  font-size: 18px;
+  font-weight: 700;
   line-height: normal;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-.car-cart .content h2 a {
+.car-cart .content h3 a {
   text-decoration: none;
   color: #000;
   display: block;
   line-height: 1.1;
 }
-.car-cart .content .left {
-  width: 50%;
+.car-cart .content .bottom {
+  text-align: center;
 }
-@media only screen and (max-width: 768px) {
-  .car-cart .content .left {
-    width: 100%;
-  }
-}
-.car-cart .content .left ul {
+.car-cart .content .bottom ul {
   margin: 0 0 10px 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
-.car-cart .content .left ul li {
+.car-cart .content .bottom ul li {
+  text-align: left;
+  width: 50%;
   display: flex;
   align-items: center;
   gap: 15px;
 }
-.car-cart .content .left ul li svg {
+.car-cart .content .bottom ul li svg {
   width: 40px;
 }
-.car-cart .content .left ul li span {
+.car-cart .content .bottom ul li span {
   display: block;
   font-size: 10px;
   opacity: 0.6;
 }
-.car-cart .content .left ul li p {
+.car-cart .content .bottom ul li p {
   margin: 0;
   padding: 0;
   font-size: 12px;
   font-weight: 400;
 }
-.car-cart .content .right {
-  width: 50%;
+.car-cart .content .bottom a {
+  display: inline-block;
   text-align: center;
 }
-@media only screen and (max-width: 768px) {
-  .car-cart .content .right {
-    width: 100%;
-  }
+.car-cart .content .top {
+  text-align: center;
+  margin-bottom: 20px;
 }
-.car-cart .content .right span {
-  display: block;
-  font-size: 12px;
-  margin-bottom: 10px;
-  line-height: normal;
-  display: block;
-}
-.car-cart .content .right .price {
+.car-cart .content .top .price {
   font-size: 31px;
   letter-spacing: 1.1px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
   color: #e11f26;
   margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
 }
-.car-cart .content .right .price div small {
+.car-cart .content .top .price span {
+  font-size: 14px;
+  line-height: normal;
+}
+.car-cart .content .top .price div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: flex-end;
+}
+.car-cart .content .top .price div small {
   display: block;
-  margin-top: 10px;
   font-size: 14px !important;
   line-height: 0px !important;
   color: #7b7b7b;
   opacity: 0.4;
   text-decoration: line-through;
+  margin: 0;
 }
-.car-cart .content .right small {
+.car-cart .content .top small {
   font-size: 10px;
   margin-bottom: 10px;
   line-height: normal;
   display: block;
 }
-.car-cart .content .right .btn--small {
+.car-cart .content .top .btn--small {
   padding: 8px 15px;
   font-size: 14px;
 }
