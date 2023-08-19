@@ -66,6 +66,9 @@
   background-color: #e11f26;
 }
 
+.home .js-header {
+  z-index: inherit;
+}
 .home #main {
   margin-top: -108px;
 }/*# sourceMappingURL=hero.css.map */

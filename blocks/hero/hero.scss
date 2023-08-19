@@ -66,6 +66,9 @@
 }
 
 .home {
+  .js-header {
+    z-index: inherit;
+  }
   #main {
     margin-top: -108px;
   }

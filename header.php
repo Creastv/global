@@ -43,13 +43,14 @@
                     <?php get_template_part('templates-parts/header/header', 'title'); ?>
                 </div>
             </div>
-            <svg class="ornament" xmlns="http://www.w3.org/2000/svg" width="602.675" height="310.415" viewBox="0 0 602.675 310.415">
-            <g transform="translate(-3338.334 -95)" opacity="0.4">
-                <path  d="M3553.274,95h136.04l-214.94,307.88h-136.04Z" fill="#fff" opacity="0.102"/>
-                <path  d="M3688.314,95h115.034L3591.1,405.415H3476.064Z" fill="#fff" opacity="0.2"/>
-                <path d="M3804.963,95h136.046L3727.03,404.57H3593.091Z" fill="#fff" opacity="0.6"/>
-            </g>
-            </svg>
+       <svg class="ornament" xmlns="http://www.w3.org/2000/svg" width="603.529" height="310.415" viewBox="0 0 603.529 310.415">
+  <g id="Group_11582" data-name="Group 11582" transform="translate(1248.563 502)" opacity="0.4">
+    <path id="Path_6982" data-name="Path 6982" d="M-1031.957-501.958h136.04L-1108.25-191.625l-140.313-.333Z" fill="#fff" opacity="0.102" style="isolation: isolate"/>
+    <path id="Path_6983" data-name="Path 6983" d="M-896.02-502h115.034L-993.234-191.585H-1108.27Z" fill="#fff" opacity="0.2" style="isolation: isolate"/>
+    <path id="Path_6984" data-name="Path 6984" d="M-781.079-501.646h136.045l-213.978,309.57H-992.951Z" fill="#fff" opacity="0.6" style="isolation: isolate"/>
+  </g>
+</svg>
+
             <?php endif; ?>
         </div>
         <?php if(is_front_page()) : ?> 
