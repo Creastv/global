@@ -9,3 +9,5 @@ $idCar  = intval($_COOKIE['carID']);
         <?php get_template_part( 'templates-parts/booking/booking', 'resumen' ); ?>
     </div>
 </div>
+
+<?php get_template_part( 'templates-parts/booking/booking-modal-info' ); ?>

@@ -11,6 +11,9 @@
     height: 100%;
     background-color: #f3f3f3;
   }
+  @media #{$md} {
+    display: none;
+  }
 }
 
 .booking-car {
@@ -103,6 +106,9 @@
     @media #{$md} {
       width: 100%;
     }
+    @media #{$md} {
+      order: 2;
+    }
   }
   .booking-page__resume {
     width: 40%;
@@ -111,6 +117,10 @@
       width: 100%;
       padding: 0px;
     }
+    @media #{$md} {
+      order: 1;
+      margin-top: -100px;
+    }
 
     .booking-page__resume__details {
       box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05102);
@@ -118,6 +128,8 @@
       border-radius: 6px;
       padding: 20px;
       margin-bottom: 20px;
+      background: #fff;
+      position: relative;
       .box {
         border: 1px solid $gray;
         border-radius: 6px;
@@ -169,7 +181,13 @@
     }
   }
 }
-
+.deposit {
+  br {
+    @media #{$sm} {
+      display: none;
+    }
+  }
+}
 .total-price {
   padding: 20px;
   margin-bottom: 20px;
@@ -329,7 +347,7 @@
 
 .page-template-page-booking {
   .h-extra__bullets {
-    @media #{$sm} {
+    @media #{$md} {
       display: none !important;
     }
   }
@@ -360,6 +378,28 @@
   .step.from-to {
     .step-wraper {
       opacity: 0.5;
+    }
+  }
+}
+
+.info {
+  margin-top: 30px;
+  small {
+    margin-bottom: 20px;
+    &:nth-child(1) {
+      font-weight: bold;
+      margin-left: 30px;
+      font-size: 14px;
+      position: relative;
+      &::before {
+        content: "";
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAbwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEeSURBVDiNpdO/LkRREAbw31wSsrcQPIBuW4WtbdQKpfAEW3oOUWgk3kCioLFvQE+iEBHReQIb0YzCIdd1N5HsJOcU882/8813IjM1LSL62Mc6esU9wS3OMvPxV0JmKkUCBxhjiLqB1cU3LjHxgzWSzzFqgu1T4kYlNjKzXBEHeM/MU/+wiBhhMTOPoV9G+9MZq3jGUcckY/SrQthhttn8sg+84LXFW+IQe3DZJKzRZQGbWJvCR43LCr3MfOvovo0TPETEchssOb1qGlGZeYEnzJWndFqFSUTUbSAi5rGF664JS86kwh0GHcU3sISbKc0HvtTZvUas4B4P2Jm2xtmFNKuUK36EsYtFXEXEsElsRNQRMcRVidn9Fl7M+p0/Af1+8B/GFEjZAAAAAElFTkSuQmCC");
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 0px;
+        left: -30px;
+      }
     }
   }
 }

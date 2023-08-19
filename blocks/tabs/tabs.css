@@ -38,7 +38,7 @@
   font-weight: 700;
 }
 #tabs .nav ul li .tab__link.active svg path {
-  fill: #000;
+  fill: #22242c;
 }
 #tabs .content__wraper {
   width: 70%;

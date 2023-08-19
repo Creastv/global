@@ -37,7 +37,7 @@
   overflow: auto;
   width: 70%;
   scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: #000 #f2f2f2;
+  scrollbar-color: #22242c #f2f2f2;
 }
 @media only screen and (max-width: 768px) {
   #localization .bottom .localizations {
@@ -58,8 +58,8 @@
   padding: 5px 10px;
   font-size: 14px;
   font-weight: 400;
-  color: #7b7b7b;
-  border: 1px solid #7b7b7b;
+  color: #22242c;
+  border: 1px solid #22242c;
   border-radius: 100px;
   display: block;
   margin-right: 10px;
@@ -67,8 +67,8 @@
 #localization .bottom ul li a:hover {
   transform: translate(0, -3px);
   color: #fff;
-  background-color: #000;
-  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.24);
+  background-color: #22242c;
+  box-shadow: 0 5px 10px 0px rgba(34, 36, 44, 0.24);
 }
 
 .localizations::-webkit-scrollbar {
@@ -81,7 +81,7 @@
 }
 
 .localizations::-webkit-scrollbar-thumb {
-  background-color: #000; /* color of the scroll thumb */
+  background-color: #22242c; /* color of the scroll thumb */
   border-radius: 20px; /* roundness of the scroll thumb */
   width: 2px;
   border: 1px solid #f2f2f2; /* creates padding around scroll thumb */

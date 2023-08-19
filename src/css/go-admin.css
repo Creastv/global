@@ -258,7 +258,7 @@ body.active {
   }
 }
 .post-item h2 a {
-  color: #000;
+  color: #22242c;
   text-decoration: none;
 }
 .post-item h2 a:hover {
@@ -327,7 +327,7 @@ body.active {
 }
 .meta-group .meta * {
   font-size: 12px;
-  color: #7b7b7b;
+  color: #22242c;
 }
 .meta-group .meta-pub {
   text-align: right;
@@ -347,7 +347,7 @@ body.active {
 .meta-group .meta-category ul li a {
   font-size: 12px;
   padding: 5px;
-  color: #7b7b7b;
+  color: #22242c;
   text-decoration: none;
 }
 .meta-group .meta-category ul li a:hover {
@@ -405,7 +405,7 @@ body.active {
   }
 }
 .rank-math-breadcrumb .last {
-  color: #000;
+  color: #22242c;
   font-size: 16px;
   display: inline-block;
   width: 150px;
@@ -438,7 +438,7 @@ body.active {
 }
 .go-pagination .page-numbers {
   text-decoration: none;
-  color: #000;
+  color: #22242c;
   padding: 10px;
 }
 .go-pagination .page-numbers:hover {
@@ -447,7 +447,7 @@ body.active {
 .go-pagination .current {
   font-weight: bold;
   color: #fff;
-  background-color: #000;
+  background-color: #22242c;
 }
 
 .kk-ata {
@@ -467,7 +467,7 @@ body.active {
 .kk-ata .kk-ata__wraper span {
   display: block;
   font-size: 12px;
-  color: #7b7b7b;
+  color: #22242c;
   margin-bottom: 5px;
 }
 .kk-ata .kksr-muted,
@@ -524,7 +524,7 @@ body.active {
 }
 
 .btn {
-  font-size: 21px;
+  font-size: 16px;
   background-color: #e11f26;
   border: 1px solid #e11f26;
   color: #fff;
@@ -712,7 +712,7 @@ body.active {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 6px;
   padding: 3px 5px;
-  color: #000;
+  color: #22242c;
   font-weight: 600;
 }
 .car-list header a img {
@@ -771,7 +771,7 @@ body.active {
   flex: auto;
   font-size: 24px;
   line-height: normal;
-  color: #000;
+  color: #22242c;
 }
 @media only screen and (max-width: 768px) {
   .car-list .content h2 {
@@ -780,7 +780,7 @@ body.active {
 }
 .car-list .content h2 a {
   text-decoration: none;
-  color: #000;
+  color: #22242c;
 }
 .car-list .content ul {
   padding: 0;
@@ -920,7 +920,7 @@ body.active {
   margin-top: 10px;
   font-size: 14px !important;
   line-height: 0px !important;
-  color: #7b7b7b;
+  color: #22242c;
   opacity: 0.4;
   text-decoration: line-through;
 }
@@ -976,7 +976,7 @@ body.active {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 6px;
   padding: 3px 5px;
-  color: #000;
+  color: #22242c;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -1016,12 +1016,12 @@ body.active {
   font-size: 18px;
   font-weight: 700;
   line-height: normal;
-  color: #000;
+  color: #22242c;
   margin-bottom: 10px;
 }
 .car-cart .content h3 a {
   text-decoration: none;
-  color: #000;
+  color: #22242c;
   display: block;
   line-height: 1.1;
 }
@@ -1091,7 +1091,7 @@ body.active {
   display: block;
   font-size: 14px !important;
   line-height: 0px !important;
-  color: #7b7b7b;
+  color: #22242c;
   opacity: 0.4;
   text-decoration: line-through;
   margin: 0;
@@ -1155,16 +1155,16 @@ body.active {
   padding: 5px 15px;
   font-size: 14px;
   font-weight: 500;
-  border: 1px solid #7b7b7b;
+  border: 1px solid #22242c;
   border-radius: 100px;
-  color: #7b7b7b;
+  color: #22242c;
   transform: translate(0, 0px) !important;
 }
 .search-resoults-info .tax-type-results ul li a:hover {
   transform: translate(0, -3px) !important;
   color: #fff;
-  background-color: #000;
-  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.24);
+  background-color: #22242c;
+  box-shadow: 0 5px 10px 0px rgba(34, 36, 44, 0.24);
 }
 .search-resoults-info .search-results-count {
   margin-right: 20px;

@@ -6,6 +6,7 @@
   overflow: hidden;
   margin-bottom: 20px;
   font-size: 21px;
+  border: none !important;
 }
 .go-localization-btn a span {
   display: block;

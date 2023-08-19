@@ -1,6 +1,6 @@
 #footer {
   position: relative;
-  background-color: $black;
+  background-color: $black2;
   padding-bottom: 20px;
   background-image: url(../img/bg-footer.png);
   background-size: cover;
@@ -161,7 +161,7 @@
 .f__banner {
   position: relative;
   z-index: 2;
-  background-color: #171616;
+  background-color: $black;
   padding: 20px 20px;
   margin-bottom: 50px;
   @media #{$sm} {

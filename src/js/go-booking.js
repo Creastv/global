@@ -1,7 +1,8 @@
 jQuery(".datepicker").flatpickr({
   enableTime: true,
   dateFormat: "Y-m-d H:i",
-  locale: "pl"
+  locale: "pl",
+  minDate: "today"
   // locale: {
   //   firstDayOfWeek: 1
   // }
@@ -170,3 +171,24 @@ inputPriceDeposit.value = carDeposit.textContent;
 // document.querySelector(".js-btn-booking").addEventListener("click", function () {
 //   jQuery(".wpcf7-form").submit();
 // });
+
+const openers = document.querySelectorAll(".opener-modal");
+const closers = document.querySelectorAll(".closer");
+
+for (let i = 0; i < openers.length; i++) {
+  openers[i].addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(".go-modal-form").classList.add("active");
+    document.body.classList.add("active");
+    // playAllVideos();
+  });
+}
+
+for (let i = 0; i < closers.length; i++) {
+  closers[i].addEventListener("click", function (e) {
+    console.log(e);
+    e.preventDefault();
+    e.target.parentElement.parentElement.parentElement.parentElement.parentElement.classList.remove("active");
+    document.body.classList.remove("active");
+  });
+}

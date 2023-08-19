@@ -33,10 +33,20 @@ h6,
     font-size: 28px;
   }
 }
-p,
-li {
+p {
   color: $black2;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #5c5e68;
+}
+small {
+  font-size: 12px;
+  line-height: 1.2;
+  display: block;
+}
+li {
+  font-size: 14px;
 }
 a {
   color: $main;

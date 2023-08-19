@@ -72,7 +72,6 @@ $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('car-list'); ?>>
     <header>
-       
             <?php echo $ofert == true ? '<span class="label">Promocja -' . $ofertProcent . '% </span>' : false; ?>
             <?php echo wp_get_attachment_image( $imgFutured, 'medium' ); ?>
              <?php if($liczbaKomentarzy > 0) { ?>
