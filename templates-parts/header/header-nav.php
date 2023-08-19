@@ -1,4 +1,15 @@
 <nav class="navbar__navigation js-navbar__navigation">
+	<div class="mobile-heder-slider">
+		<?php get_template_part('templates-parts/header/header', 'brand'); ?>
+		<div class="navbar__toggler js-navbar__toggler--close active">
+			<div class="navbar__toggler__btn">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	
     <?php 
 	// if ( wp_is_mobile() ) : 
 		// $navLocation = 'mobile_menu';
@@ -32,4 +43,19 @@
 	echo $temp_menu; 
 	
 	?>
+	
+	 <?php 
+	$link = get_field( 'cta', 'options' );
+	if( $link ) {
+		$link_url = $link['url'];
+		$link_title = $link['title'];
+		$link_target = $link['target'] ? $link['target'] : '_self';
+	}
+	?>
+	<div class="header__cta header__cta--mobile">
+		<?php if($link) {  ?>
+		<a class="btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+		<?php } ?>
+	</div>
+
 </nav>

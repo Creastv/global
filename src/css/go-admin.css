@@ -1036,12 +1036,22 @@ body.active {
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 768px) {
+  .car-cart .content .bottom ul {
+    display: none;
+  }
+}
 .car-cart .content .bottom ul li {
   text-align: left;
   width: 50%;
   display: flex;
   align-items: center;
   gap: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .car-cart .content .bottom ul li {
+    width: 100%;
+  }
 }
 .car-cart .content .bottom ul li svg {
   width: 40px;
@@ -1097,7 +1107,7 @@ body.active {
   margin: 0;
 }
 .car-cart .content .top small {
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 10px;
   line-height: normal;
   display: block;

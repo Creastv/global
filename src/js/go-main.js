@@ -2,6 +2,7 @@
   AOS.init();
 
   const togglerNav = document.querySelector(".js-navbar__toggler");
+  const togglerNavClose = document.querySelector(".js-navbar__toggler--close");
   const nav = document.querySelector(".js-navbar__navigation");
   const heightHeader = document.querySelector("#header");
   let navFlag = false;
@@ -19,7 +20,12 @@
       navFlag = false;
     }
   });
-
+  togglerNavClose.addEventListener("click", function () {
+    nav.classList.remove("active");
+    togglerNav.classList.remove("active");
+    document.querySelector("body").classList.remove("active");
+    navFlag = false;
+  });
   // Close after click the navmenu on mobile
   const itemsNAv = document.querySelectorAll(".js-navbar__navigation a");
   for (let i = 0; i < itemsNAv.length; i++) {

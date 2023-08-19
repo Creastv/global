@@ -454,6 +454,11 @@ body.active {
   color: #e11f26 !important;
 }
 
+.js-header {
+  position: relative;
+  z-index: 99999;
+}
+
 #header-top {
   background-color: #fff;
 }
@@ -498,15 +503,6 @@ body.active {
     flex: auto;
   }
 }
-@media only screen and (max-width: 460px) {
-  .navbar__brand {
-    width: 30%;
-  }
-  .navbar__brand svg {
-    width: 100%;
-  }
-}
-
 @media only screen and (max-width: 1300px) {
   .navbar__navigation {
     order: 4;
@@ -514,13 +510,24 @@ body.active {
     position: fixed;
     z-index: 10;
     top: 0px;
-    left: 0px;
-    transform: translate(-100%, 0);
+    right: 0px;
+    transform: translate(200%, 0);
+    transition: all 0.5s ease 0.1s;
     max-width: 400px;
     width: 70%;
     height: 100vh;
     background-color: #22242c;
-    transition: all 0.2s linear;
+  }
+}
+@media only screen and (max-width: 1300px) and (max-width: 768px) {
+  .navbar__navigation {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .navbar__navigation > ul {
+    opacity: 0;
+    transition: all 1s ease 0.1s;
   }
 }
 .navbar__navigation ul {
@@ -556,6 +563,9 @@ body.active {
     display: block;
     width: 100%;
     font-size: 21px;
+    line-height: 34px;
+    font-size: 21px;
+    border-bottom: rgba(255, 255, 255, 0.16) 1px solid;
   }
 }
 .navbar__navigation ul li:hover > a > span:after {
@@ -638,12 +648,12 @@ body.active {
   position: absolute;
   top: 0px;
   right: 0px;
-  background-color: #fff;
-  color: #22242c;
-  width: 20px;
-  height: 24px;
+  color: #e11f26;
+  width: 30px;
+  height: 34px;
   text-align: center;
   cursor: pointer;
+  font-size: 30px;
   display: none;
 }
 @media only screen and (max-width: 1300px) {
@@ -652,8 +662,7 @@ body.active {
   }
 }
 .navbar__navigation .mobile-opener:hover {
-  background-color: #fff;
-  color: #22242c;
+  opacity: 0.4;
 }
 .navbar__navigation li.active > .sub-menu {
   display: block;
@@ -664,28 +673,33 @@ body.active {
     transform: translate(0, 0);
   }
 }
+.navbar__navigation.active > ul {
+  opacity: 1;
+}
 
-.header__cta .btn {
+.header__cta.header__cta--desktop .btn {
   font-size: 16px;
   background-color: #e11f26;
   color: #fff;
   padding: 10px 20px;
 }
 @media only screen and (max-width: 460px) {
-  .header__cta .btn {
+  .header__cta.header__cta--desktop .btn {
     padding: 5px 10px;
     font-size: 14px !important;
   }
 }
 @media only screen and (max-width: 460px) {
-  .header__cta .btn {
+  .header__cta.header__cta--desktop .btn {
     font-size: 12px !important;
+    display: none;
   }
 }
 
 .navbar__toggler {
   display: none;
   align-items: center;
+  height: 30px;
   transform: translateY(-2px);
   cursor: pointer;
 }
@@ -719,6 +733,17 @@ body.active {
 .navbar__toggler:hover .navbar__toggler__btn span {
   display: block;
   width: 30px !important;
+}
+
+.navbar__toggler.active .navbar__toggler__btn span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.navbar__toggler.active .navbar__toggler__btn span:nth-child(2) {
+  display: none;
+}
+.navbar__toggler.active .navbar__toggler__btn span:nth-child(3) {
+  width: 30px;
+  transform: translateY(-2px) rotate(-45deg);
 }
 
 .header__conatact {
@@ -819,6 +844,30 @@ body.active {
   top: 0px;
   background-color: #22242c;
   padding: 10px 0;
+}
+
+.mobile-heder-slider {
+  display: none;
+}
+@media only screen and (max-width: 1300px) {
+  .mobile-heder-slider {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+  }
+}
+
+.header__cta--mobile {
+  display: none;
+}
+@media only screen and (max-width: 1300px) {
+  .header__cta--mobile {
+    display: flex;
+    padding: 20px 30px;
+  }
+  .header__cta--mobile a {
+    width: 100%;
+  }
 }
 
 .h-extra {
@@ -2897,12 +2946,22 @@ body.active {
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 768px) {
+  .car-cart .content .bottom ul {
+    display: none;
+  }
+}
 .car-cart .content .bottom ul li {
   text-align: left;
   width: 50%;
   display: flex;
   align-items: center;
   gap: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .car-cart .content .bottom ul li {
+    width: 100%;
+  }
 }
 .car-cart .content .bottom ul li svg {
   width: 40px;
@@ -2958,7 +3017,7 @@ body.active {
   margin: 0;
 }
 .car-cart .content .top small {
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 10px;
   line-height: normal;
   display: block;
