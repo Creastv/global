@@ -71,4 +71,7 @@
 }
 .home #main {
   margin-top: -108px;
+}
+.home #header-bottom {
+  overflow: initial !important;
 }/*# sourceMappingURL=hero.css.map */

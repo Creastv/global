@@ -456,7 +456,7 @@ body.active {
 
 .js-header {
   position: relative;
-  z-index: 99999;
+  z-index: 999;
 }
 
 #header-top {
