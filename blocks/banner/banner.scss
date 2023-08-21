@@ -1,0 +1,67 @@
+@import "../../src/css/scss/variable";
+
+.banner {
+  background-color: #efefef;
+  border-radius: 10px;
+  .banner__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    @media #{$md} {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .left {
+      padding: 10px 20px;
+      flex: auto;
+      width: 100%;
+      @media #{$md} {
+        padding: 20px;
+        text-align: center;
+      }
+      @media #{$xs} {
+        padding: 20px 20px 0px 20px;
+      }
+      h4 {
+        font-size: 31px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.2;
+      }
+      p {
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    img {
+      //   width: 100%;
+      max-width: 100%;
+      height: auto;
+      @media #{$lg} {
+        width: 350px;
+        // width: auto;
+      }
+    }
+    .right {
+      padding: 10px 20px;
+
+      @media #{$md} {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+      @media #{$xs} {
+        padding: 0px 20px 20px 20px;
+      }
+      .btn {
+        width: 200px;
+        max-width: 100%;
+        @media #{$sm} {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

@@ -153,6 +153,23 @@ function register_acf_block_types() {
       },
     ));
 
+     acf_register_block_type(array(
+      'name'              => 'banner',
+      'title'             => __('Banner'),
+      'render_template'   => 'blocks/banner/banner.php',
+      'category'          => 'formatting',
+      'icon' => array(
+        'background' => '#e11f26',
+        'foreground' => '#fff',
+        'src' => 'ellipsis',
+      ),
+      'mode'            => 'preview', 
+      'keywords'          => array( 'banner' ),
+      'enqueue_assets'    => function(){
+          wp_enqueue_style( 'go-banner',  get_template_directory_uri() . '/blocks/banner/banner.min.css' );
+      },
+    ));
+
     acf_register_block_type(array(
       'name'              => 'container',
       'title'             => __('Kontener'),

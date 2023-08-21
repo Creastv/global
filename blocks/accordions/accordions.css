@@ -289,6 +289,11 @@ body.active {
   font-weight: 100 !important;
   color: #22242c;
 }
+@media only screen and (max-width: 768px) {
+  .faq .accordion .question span:after {
+    font-size: 24px !important;
+  }
+}
 .faq .accordion .question svg {
   position: absolute;
   right: 15px;
