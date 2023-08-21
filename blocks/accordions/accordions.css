@@ -215,6 +215,7 @@ body.active {
 }
 .entry-header #breadcrumbs a {
   color: #e11f26;
+  text-decoration: none;
 }
 
 .kontakt-wraper {

@@ -215,6 +215,7 @@ body.active {
 }
 .entry-header #breadcrumbs a {
   color: #e11f26;
+  text-decoration: none;
 }
 
 .kontakt-wraper {
@@ -1905,6 +1906,19 @@ body.active {
   color: #e11f26;
   font-weight: 900;
   font-size: 31px;
+}
+.total-price .total-price__wraper--down {
+  display: none;
+  text-align: right;
+}
+.total-price .total-price__wraper--down * {
+  font-size: 12px !important;
+}
+.total-price .total-price__wraper--down .price-down b {
+  color: green;
+}
+.total-price .total-price__wraper--down.display {
+  display: block;
 }
 
 .label {

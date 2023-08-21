@@ -210,6 +210,19 @@
       font-size: 31px;
     }
   }
+  .total-price__wraper--down {
+    display: none;
+    text-align: right;
+    * {
+      font-size: 12px !important;
+    }
+    .price-down b {
+      color: green;
+    }
+  }
+  .total-price__wraper--down.display {
+    display: block;
+  }
 }
 .label {
   position: absolute;
