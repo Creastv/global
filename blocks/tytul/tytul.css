@@ -1,7 +1,7 @@
 .b-title .b-title__h {
   font-size: 41px;
   line-height: 47px;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 @media only screen and (max-width: 768px) {
   .b-title .b-title__h {
@@ -13,6 +13,10 @@
   .b-title .b-title__h br {
     display: none;
   }
+}
+.b-title .b-title__s {
+  display: block;
+  opacity: 0.6;
 }
 .b-title .color-main {
   color: #e11f26 !important;

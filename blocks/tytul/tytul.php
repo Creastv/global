@@ -9,7 +9,7 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div class="b-title <?php echo esc_attr( $class_name ); ?>">
-    <?php echo $subtitle ? '<span class="color-main"> ' . $subtitle .  ' </span>' : false; ?>
+    <?php echo $subtitle ? '<span class="b-title__s"> ' . $subtitle .  ' </span>' : false; ?>
     <<?php echo $tag; ?> class="b-title__h"><?php echo $title; ?> </<?php echo $tag; ?>>
     <?php if($desc) { ?>
         <svg xmlns="http://www.w3.org/2000/svg" width="33.112" height="17.031" viewBox="0 0 33.112 17.031">
