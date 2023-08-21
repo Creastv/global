@@ -13,16 +13,22 @@ const carDeposit = document.querySelector(".deposit-value");
 const carPrice = document.querySelector(".deposit-value");
 const carPriceExtras = document.querySelector(".deposit-value");
 const carPriceTotal = document.querySelector(".deposit-value");
+const carPriceSave = document.querySelector(".total-price__wraper--down");
 
 // inputs to set value
 const inputCarTitle = document.querySelector("#samochod");
 const inputRentFrom = document.querySelector("#data-od");
 const inputRentTo = document.querySelector("#data-do");
-const inputExtras = document.querySelector("#dodatki");
 const inputPriceRent = document.querySelector("#cena-najmu");
 const inputPriceExtras = document.querySelector("#cena-dodatki");
 const inputPriceTotal = document.querySelector("#cena-calkowita");
 const inputPriceDeposit = document.querySelector("#cena-kaucja");
+const inputDiscount = document.querySelector("#promocja");
+const inputSave = document.querySelector("#cena-promocyjna");
+
+const inputDodOne = document.querySelector("#dotek-tree");
+const inputDodTwo = document.querySelector("#dotek-two");
+const inputDodTree = document.querySelector("#dotek-tree");
 
 const extras = document.querySelectorAll(".extras .extra .btn-add");
 const personalInfo = document.querySelector(".personal-info");
@@ -69,7 +75,7 @@ inputGetTo.addEventListener("change", function () {
   }
   days();
   priceRentCalculator(days());
-  setTotalPrice(priceRent, 50);
+  setTotalPrice(priceRent, 0);
 });
 
 function days() {
@@ -88,22 +94,89 @@ const priceTwo = document.querySelector(".booking-page__resume__details").getAtt
 const priceTree = document.querySelector(".booking-page__resume__details").getAttribute("data-pricetree");
 const priceFour = document.querySelector(".booking-page__resume__details").getAttribute("data-pricefour");
 
-let priceRent = priceOne;
+const discountPro = document.querySelector(".booking-page__resume__details").getAttribute("data-disc");
+const discpart = document.querySelector(".booking-page__resume__details").getAttribute("data-discpart");
+const hasPromo = document.querySelector(".booking-page__resume__details").getAttribute("data-pro");
+
+let priceRent = 0;
 // document.querySelector(".price-value").textContent = priceRent;
 // inputPriceRent.value = priceRent;
 
 function priceRentCalculator(days) {
   let stawka = "";
-  if (days <= 4) {
+
+  inputDiscount.value = 0 + "%";
+  inputSave.value = 0 + " zł";
+  carPriceSave.innerHTML = "";
+
+  if (days >= 0 && days <= 4) {
     stawka = priceOne;
+    priceRent = days * stawka;
+
+    if (hasPromo == "true") {
+      if (discpart == "1-4 dni") {
+        stawka = priceTwo;
+        disc = ((days * stawka) / 100) * discountPro;
+        priceRent = days * stawka - disc;
+        disc = Math.ceil(disc);
+
+        inputDiscount.value = discountPro + "%";
+        inputSave.value = disc + " zł";
+        carPriceSave.innerHTML = "<span> Zaoszczędzasz: </span><span><b>" + disc + " zł = " + discountPro + "% </b></span>";
+      }
+    }
   } else if (days > 4 && days <= 15) {
     stawka = priceTwo;
-  } else if (days > 15 && days <= 30) {
+    priceRent = days * stawka;
+
+    if (hasPromo == "true") {
+      if (discpart == "5-14 dni") {
+        stawka = priceTwo;
+        disc = ((days * stawka) / 100) * discountPro;
+        priceRent = days * stawka - disc;
+        disc = Math.ceil(disc);
+
+        inputDiscount.value = discountPro + "%";
+        inputSave.value = disc + " zł";
+        carPriceSave.innerHTML = "<span> Zaoszczędzasz: </span><span><b>" + disc + " zł = " + discountPro + "% </b></span>";
+      }
+    }
+  } else if (days > 15 && days <= 29) {
     stawka = priceTree;
-  } else if (days > 31) {
-    stawka = priceFour;
+    priceRent = days * stawka;
+
+    if (hasPromo == "true") {
+      if (discpart == "15+_dni") {
+        stawka = priceTree;
+        disc = ((days * stawka) / 100) * discountPro;
+        priceRent = days * stawka - disc;
+        disc = Math.ceil(disc);
+
+        inputDiscount.value = discountPro + "%";
+        inputSave.value = disc + " zł";
+        carPriceSave.innerHTML = "<span> Zaoszczędzasz: </span><span><b>" + disc + " zł = " + discountPro + "% </b></span>";
+      }
+    }
+  } else if (days > 29) {
+    stawka = "" + priceFour / 30 + "";
+    priceRent = days * stawka;
+
+    if (hasPromo == "true") {
+      if (discpart == "Miesiąc") {
+        stawka = "" + priceFour / 30 + "";
+        disc = ((days * stawka) / 100) * discountPro;
+        priceRent = days * stawka - disc;
+        disc = Math.ceil(disc);
+
+        inputDiscount.value = discountPro + "%";
+        inputSave.value = disc + " zł";
+        carPriceSave.innerHTML = "<span> Zaoszczędzasz: </span><span><b>" + disc + " zł = " + discountPro + "% </b></span>";
+      }
+    }
   }
-  priceRent = days * stawka;
+
+  priceRent = Math.ceil(priceRent);
+
   if (priceRent > 0) {
     inputPriceRent.value = priceRent + " zł";
     document.querySelector(".price-value").textContent = priceRent + " zł";
@@ -118,6 +191,16 @@ const con = document.querySelector(".box.extras");
 
 for (let i = 0; i < extras.length; i++) {
   extras[i].addEventListener("click", function (e) {
+    // console.log(extras[i].parentElement.getAttribute("data-txt"));
+
+    // let one = extras[0].parentElement;
+
+    // if (one.classList.contains("active")) {
+    //   inputDodOne.value = inputDodOne.getAttribute("data-txt");
+    // } else {
+    //   inputDodOne.value = " ";
+    // }
+
     if (!e.target.parentNode.classList.contains("active")) {
       let text = e.target.parentNode.querySelector(".desc").textContent;
       let price = e.target.parentNode.querySelector(".price b").textContent;
@@ -132,10 +215,11 @@ for (let i = 0; i < extras.length; i++) {
     } else {
       document.querySelector(".active-" + i).remove();
     }
-
     if (!e.target.parentNode.classList.contains("active")) {
       e.target.textContent = "Odejmij -";
-      priceExtras += 50;
+      if (priceExtras !== "") {
+        priceExtras += 50;
+      }
     } else {
       e.target.textContent = "Dodaj +";
       priceExtras -= 50;
@@ -148,23 +232,21 @@ for (let i = 0; i < extras.length; i++) {
     inputPriceExtras.value = priceExtras + " zł";
   });
 }
+
 const extrasActive = document.querySelectorAll(".extras");
 
-// function getExtras() {
-//   const extrasAll = document.querySelectorAll(".extras .ex");
-//   const el = [];
-//   for (let i = 0; i < extrasAll.length; i++) {
-//     extrasAll[i].push();
-//   }
-//   inputExtras.value = el;
-// }
 // Total price
 
 const totalPriceContener = document.querySelector(".total-price__wraper .price");
 
 function setTotalPrice(rent, extras) {
-  extras ? extras : 0;
-  totalPriceContener.textContent = rent + extras + " zł";
+  // extras = extras ? extras : 0;
+  if (extras <= 0) {
+    totalPriceContener.textContent = rent + " zł";
+  } else {
+    totalPriceContener.textContent = rent + extras + " zł";
+  }
+
   inputPriceTotal.value = rent + extras + " zł";
 }
 
