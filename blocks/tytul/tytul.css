@@ -1,7 +1,7 @@
 .b-title .b-title__h {
   font-size: 41px;
   line-height: 47px;
-  margin: 20px;
+  margin: 20px 0;
 }
 @media only screen and (max-width: 768px) {
   .b-title .b-title__h {
