@@ -64,7 +64,9 @@ a {
 .text-right {
   text-align: right;
 }
-
+.color-main {
+  color: $main;
+}
 .entry-header {
   width: 100%;
   text-align: center;

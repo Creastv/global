@@ -86,6 +86,10 @@ a {
   text-align: right;
 }
 
+.color-main {
+  color: #e11f26;
+}
+
 .entry-header {
   width: 100%;
   text-align: center;
