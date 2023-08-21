@@ -108,6 +108,10 @@ body.active {
   background-size: 30%;
 }
 
+.wp-block-media-text .wp-block-media-text__content {
+  padding: 0 20px;
+}
+
 .posts-wraper {
   display: flex;
   flex-wrap: wrap;

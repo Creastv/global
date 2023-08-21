@@ -224,6 +224,10 @@ body.active {
   background-size: 30%;
 }
 
+.wp-block-media-text .wp-block-media-text__content {
+  padding: 0 20px;
+}
+
 .faq__wraper {
   display: flex;
   margin-bottom: 50px;
@@ -308,7 +312,6 @@ body.active {
   border-radius: 6px;
   height: 0;
   overflow: hidden;
-  text-align: justify;
 }
 .faq .accordion.active {
   transition: all 0.1s;
