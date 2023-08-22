@@ -107,7 +107,7 @@ function priceRentCalculator(days) {
 
   inputDiscount.value = 0 + "%";
   inputSave.value = 0 + " zł";
-  carPriceSave.innerHTML = "";
+  // carPriceSave.innerHTML = "";
 
   if (days >= 0 && days <= 4) {
     stawka = priceOne;

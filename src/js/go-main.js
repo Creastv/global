@@ -81,7 +81,6 @@
 
   // footer
   const calaps = document.querySelectorAll(".calaps");
-  console.log(calaps[1].firstChild);
   for (let i = 0; i < calaps.length; i++) {
     calaps[i].addEventListener("click", function () {
       calaps[i].classList.toggle("active");
