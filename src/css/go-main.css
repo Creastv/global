@@ -3223,6 +3223,15 @@ body.active {
   align-items: center;
   gap: 20px;
 }
+@media only screen and (max-width: 768px) {
+  .single-car header .h-left__top {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+}
+.single-car header .opinie {
+  margin-bottom: 20px;
+}
 .single-car header h1 {
   font-size: 31px;
 }
@@ -3274,7 +3283,6 @@ body.active {
   }
 }
 .single-car header .btn span {
-  display: block;
   position: relative;
   z-index: 2;
 }

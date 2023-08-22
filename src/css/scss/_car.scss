@@ -25,6 +25,13 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 20px;
+      @media #{$sm} {
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+    }
+    .opinie {
+      margin-bottom: 20px;
     }
     h1 {
       font-size: 31px;
@@ -71,7 +78,7 @@
       }
 
       span {
-        display: block;
+        // display: block;
         position: relative;
         z-index: 2;
       }
