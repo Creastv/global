@@ -13,12 +13,12 @@ $lokalizacje = get_field( 'lokalizacje', 'options' );
 
 ?>
 <div id="localization">
-    <div class="top">
+    <!-- <div class="top">
         <?php echo $adres ? '<p>' . $adres . '</p>': false; ?>
         <?php if($link) { ?>
          <a class="btn-revers" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
         <?php } ?>
-    </div>
+    </div> -->
     <div class="middle">
         <?php echo $map; ?>
     </div>
