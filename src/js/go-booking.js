@@ -290,3 +290,11 @@ if (window.innerWidth < 768) {
   jQuery(".booking-page__resume__details").detach().appendTo(".resumen");
   jQuery(".total-price").detach().appendTo(".resumen-price");
 }
+
+document.addEventListener(
+  "wpcf7mailsent",
+  function (event) {
+    location = "https://beta.globalelitecar.pl/potwierdzenie-wstepnej-rezerwacji/";
+  },
+  false
+);
