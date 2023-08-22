@@ -72,6 +72,7 @@ $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('car-list'); ?>>
     <header>
+        <a href="<?php the_permalink($idCar); ?>">
             <?php echo $ofert == true ? '<span class="label">Promocja -' . $ofertProcent . '% </span>' : false; ?>
             <?php echo wp_get_attachment_image( $imgFutured, 'medium' ); ?>
              <?php if($liczbaKomentarzy > 0) { ?>
@@ -82,6 +83,7 @@ $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
                 </svg>
             </span>
             <?php } ?>
+        </a>
     </header>
     <div class="content">
         <h2 class="entry-title"><?php echo $titleCar ?></h2>

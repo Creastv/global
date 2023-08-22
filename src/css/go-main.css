@@ -3793,9 +3793,25 @@ body.active {
 .car-gallery .swiper-container-rtl .swiper-button-prev {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAxCAYAAADJP8l8AAAABHNCSVQICAgIfAhkiAAAAl5JREFUWEe92ElLw0AUB3CDu3jzG/gRBNGDBxfECiL0UotoERTcevGmoOBB0KMX9SCIO27gLooo3qqgH8FPIYIgGv+vTEpq09ny2sCQLpP368tM0nlxSrC5rtuO3SxaI9oz2pzjOLRn3xxg44i6GhA5AXSHWyTwHUHr8wQeArrFiRL4iYA1kqDDQDe4UAJprJokAV18N8KFEtiCgA9oFcVAHTFLI9ifFwNNg8VEM6AhOokxXbOZSFmgAUpdJ2zQHLDQaCAo0G7sbzROWxKZrmj0S3fJCxYqUyloiE4h02VVpkqQG9UCOVFtkAs1An3oKV5XKcZrBmO69L+PMShQWiFc26BWYBjUGrRFQ4EC7cD+SuP00sJsITRomGmEBTRAU2ygQBexn5ZcLl9sINZGXYBuFdfmEwsIrBPQhcbEaQwNijJBdRP4wY+JY5aehAI1sV9gfYQp/4Bl42GAUY2y58WyytAWs8pQrNTvFROEyoNBf2ZWGQrsDgfLih9pLaJ9Sjkw7VMKrBWdaclYLZlIWlWWMkNxUV8CqlTcRbTqSNW6lO4gdFGXKzDtZb9s5d0LhEo41UaFTdAzgsDj8tUWUfQ+QitTjNkosHXVL/J/H1Q9xdFhF61UgdEDh20TLGeWYoIQto8mG1uajVZYFggsgQ82NbB+ZHZgmpnX36vxx/CBTkU7EHS7MsHpKUYbDnjUOIj+zw41+km7EJhCj2ZFoBiw47BYegwBfmBfKwkWBXbGgXngG140BAT8xmeE0Z2GbaMMY4gWNDY93FjmsgCaxJt5tDq0FzR6UPDKlpYv0B/FrQcpajmh0QAAAABJRU5ErkJggg==");
 }
+@media only screen and (max-width: 460px) {
+  .car-gallery .swiper-button-next,
+  .car-gallery .swiper-container-rtl .swiper-button-prev {
+    width: 18px;
+    height: 30px;
+    background-size: cover;
+  }
+}
 .car-gallery .swiper-button-prev,
 .car-gallery .swiper-container-rtl .swiper-button-next {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAxCAYAAADJP8l8AAAABHNCSVQICAgIfAhkiAAAAnBJREFUWEe12FtLVUEUwPE2XSzzwwQZkSRIZFRm4YPig5BY2IUIfQuCIIh6CLogXaBCCR8ihUzJFKWgp+gtiD5IEUYUp/+SpSjuPWtue2CYg7PP+u01M3tme4ptNZVGo9FK6KfU/dSv1FtFUUwXdXhg3cSdLYl9JTsIdhzoLXVXCfgtKwh2EuSdY9RWsoGa2Xtjij5mAcGOAi15rIdDyaBic2C7DXCIVTqeBIId0TmzsMtgT+SGokGwwzqM3lg0qNgiAZqNYVzPbO264AxTsOAMFVvgi3uNzK4yZ2Nl13hnCNZGgGXqntBh3Hi9FwjWwZfmPbBRMnvguiETVEyGscnIzMTMOQTr5CLZ9a2lP0JmDz12murnUDHZiHcagYbBnvlglRmCddH5xsAa9F8IwUpBxWbo3OG4a8EGwV76Zlb64IP10PHawP7RPwD2KhTblKFiU/xxuyOQYL1gMtxRZfWxAOunmTSwv/T3pWCrGYIdpP3scbunweTcSyoCfiJCuxHlBJg8/MlFwJ9EaXFEug12PVnSAALKuXbMEXCFvlOgH3KgAh4g0Bcj2G/6u3Kga6v0BgFvGqhkKgtHjqjosn5akOkdolyrO9NNxxOoT6ZJw7vlPASVLCVbV4lGSw/gOtHKE78u1PmKUQfq806TdU5NUFYOmY7Q3M+xkLzAQLTHtdF7g4qO0t7z2GYqT5cgMCDTP1x7pizTYDAVjQIVvUT72BjeLZlGg7FoEhiDJoMb0Ed8dsWTDX9fFlDR87TW/xjz2UBFz9E+dyykH1lBRYdoX1Sg37ODip6lnShBL9YCKiq/CciLmfws9ks+s/Pc/Q+rugpWCUglcQAAAABJRU5ErkJggg==");
+}
+@media only screen and (max-width: 460px) {
+  .car-gallery .swiper-button-prev,
+  .car-gallery .swiper-container-rtl .swiper-button-next {
+    width: 18px;
+    height: 30px;
+    background-size: cover;
+  }
 }
 
 .fancybox__thumbs.is-draggable,

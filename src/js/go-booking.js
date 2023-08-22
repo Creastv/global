@@ -104,10 +104,11 @@ let priceRent = 0;
 
 function priceRentCalculator(days) {
   let stawka = "";
-
-  inputDiscount.value = 0 + "%";
-  inputSave.value = 0 + " zł";
-  // carPriceSave.innerHTML = "";
+  if (hasPromo == "true") {
+    inputDiscount.value = 0 + "%";
+    inputSave.value = 0 + " zł";
+    carPriceSave.innerHTML = "";
+  }
 
   if (days >= 0 && days <= 4) {
     stawka = priceOne;
@@ -191,16 +192,6 @@ const con = document.querySelector(".box.extras");
 
 for (let i = 0; i < extras.length; i++) {
   extras[i].addEventListener("click", function (e) {
-    // console.log(extras[i].parentElement.getAttribute("data-txt"));
-
-    // let one = extras[0].parentElement;
-
-    // if (one.classList.contains("active")) {
-    //   inputDodOne.value = inputDodOne.getAttribute("data-txt");
-    // } else {
-    //   inputDodOne.value = " ";
-    // }
-
     if (!e.target.parentNode.classList.contains("active")) {
       let text = e.target.parentNode.querySelector(".desc").textContent;
       let price = e.target.parentNode.querySelector(".price b").textContent;
@@ -209,9 +200,9 @@ for (let i = 0; i < extras.length; i++) {
       all.classList.add("active-" + i);
       con.prepend(all);
       all.innerHTML = `
-            <span class="extra-item">${text}</span>
-            <span class="extra-item__price"><b>${price}</b></span>
-      `;
+        <span class="extra-item">${text}</span>
+        <span class="extra-item__price"><b>${price}</b></span>
+  `;
     } else {
       document.querySelector(".active-" + i).remove();
     }
@@ -232,13 +223,34 @@ for (let i = 0; i < extras.length; i++) {
     inputPriceExtras.value = priceExtras + " zł";
   });
 }
+console.log(extras[1]);
 
-const extrasActive = document.querySelectorAll(".extras");
+extras[0].addEventListener("click", function (e) {
+  if (document.querySelector("#dodatek-one").value == "") {
+    document.querySelector("#dodatek-one").value = extras[0].parentElement.getAttribute("data-txt");
+  } else {
+    document.querySelector("#dodatek-one").value = "";
+  }
+});
+
+extras[1].addEventListener("click", function (e) {
+  if (document.querySelector("#dodatek-two").value == "") {
+    document.querySelector("#dodatek-two").value = extras[1].parentElement.getAttribute("data-txt");
+  } else {
+    document.querySelector("#dodatek-two").value = "";
+  }
+});
+
+extras[2].addEventListener("click", function (e) {
+  if (document.querySelector("#dodatek-tree").value == "") {
+    document.querySelector("#dodatek-tree").value = extras[2].parentElement.getAttribute("data-txt");
+  } else {
+    document.querySelector("#dodatek-tree").value = "";
+  }
+});
 
 // Total price
-
 const totalPriceContener = document.querySelector(".total-price__wraper .price");
-
 function setTotalPrice(rent, extras) {
   // extras = extras ? extras : 0;
   if (extras <= 0) {
@@ -252,10 +264,6 @@ function setTotalPrice(rent, extras) {
 
 inputCarTitle.value = carTitle.textContent;
 inputPriceDeposit.value = carDeposit.textContent;
-
-// document.querySelector(".js-btn-booking").addEventListener("click", function () {
-//   jQuery(".wpcf7-form").submit();
-// });
 
 const openers = document.querySelectorAll(".opener-modal");
 const closers = document.querySelectorAll(".closer");
