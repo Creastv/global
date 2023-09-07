@@ -123,9 +123,8 @@
       document.querySelector(".h-extra__form__wrap form").style.display = "block";
     }, 200);
   }
-
-  if (window.screen.width > 768) {
-    if (document.querySelector(".h-extra__form__wrap")) {
+  if (document.querySelector(".h-extra__form__wrap")) {
+    if (window.screen.width < 768) {
       document.querySelector(".h-extra__form__wrap").addEventListener("click", function () {
         document.querySelector(".js-toggler-form").classList.toggle("active");
         document.querySelector(".h-extra__form__wrap form").classList.toggle("active");

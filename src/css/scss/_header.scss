@@ -1,7 +1,6 @@
 .js-header {
   position: relative;
   z-index: 999;
-  overflow-x: hidden;
 }
 #header-top {
   background-color: #fff;
@@ -27,6 +26,14 @@
     @media #{$xs} {
       justify-content: flex-end;
     }
+  }
+  .ornament-wrap {
+    overflow: hidden;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    top: 0px;
+    right: 0;
   }
   .ornament {
     position: absolute;
