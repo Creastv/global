@@ -44,12 +44,12 @@
                 </div>
             </div>
        <svg class="ornament" xmlns="http://www.w3.org/2000/svg" width="603.529" height="310.415" viewBox="0 0 603.529 310.415">
-  <g id="Group_11582" data-name="Group 11582" transform="translate(1248.563 502)" opacity="0.4">
-    <path id="Path_6982" data-name="Path 6982" d="M-1031.957-501.958h136.04L-1108.25-191.625l-140.313-.333Z" fill="#fff" opacity="0.102" style="isolation: isolate"/>
-    <path id="Path_6983" data-name="Path 6983" d="M-896.02-502h115.034L-993.234-191.585H-1108.27Z" fill="#fff" opacity="0.2" style="isolation: isolate"/>
-    <path id="Path_6984" data-name="Path 6984" d="M-781.079-501.646h136.045l-213.978,309.57H-992.951Z" fill="#fff" opacity="0.6" style="isolation: isolate"/>
-  </g>
-</svg>
+        <g id="Group_11582" data-name="Group 11582" transform="translate(1248.563 502)" opacity="0.4">
+            <path id="Path_6982" data-name="Path 6982" d="M-1031.957-501.958h136.04L-1108.25-191.625l-140.313-.333Z" fill="#fff" opacity="0.102" style="isolation: isolate"/>
+            <path id="Path_6983" data-name="Path 6983" d="M-896.02-502h115.034L-993.234-191.585H-1108.27Z" fill="#fff" opacity="0.2" style="isolation: isolate"/>
+            <path id="Path_6984" data-name="Path 6984" d="M-781.079-501.646h136.045l-213.978,309.57H-992.951Z" fill="#fff" opacity="0.6" style="isolation: isolate"/>
+        </g>
+        </svg>
 
             <?php endif; ?>
         </div>

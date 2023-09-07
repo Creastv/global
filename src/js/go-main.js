@@ -1,22 +1,25 @@
 (window.load = function (event) {
-  AOS.init();
+  // AOS.init();
 
   const togglerNav = document.querySelector(".js-navbar__toggler");
   const togglerNavClose = document.querySelector(".js-navbar__toggler--close");
   const nav = document.querySelector(".js-navbar__navigation");
   const heightHeader = document.querySelector("#header");
+  const navbar = document.querySelector("#navbar");
   let navFlag = false;
 
   togglerNav.addEventListener("click", () => {
     if (navFlag == false) {
       nav.classList.add("active");
       togglerNav.classList.add("active");
-      document.querySelector("body").classList.add("active");
+      // document.querySelector("body").classList.add("active");
+      navbar.classList.add("subclass");
       navFlag = true;
     } else {
       nav.classList.remove("active");
       togglerNav.classList.remove("active");
-      document.querySelector("body").classList.remove("active");
+      // document.querySelector("body").classList.remove("active");
+      navbar.classList.remove("subclass");
       navFlag = false;
     }
   });
@@ -50,7 +53,7 @@
   });
 
   // sticy nabvbar
-  const navbar = document.querySelector("#navbar");
+
   const containerNavbar = document.querySelector("#header-bottom");
   const topPadding = document.querySelector("#header-top").clientHeight + (document.querySelector(".header__cookis-bar") ? document.querySelector(".header__cookis-bar").clientHeight : false);
 
@@ -68,7 +71,7 @@
   const itemSubmenu = document.querySelectorAll(".js-navbar__navigation  .menu-item-has-children");
   for (let i = 0; i < itemSubmenu.length; i++) {
     const arrow = document.createElement("div");
-    const contentArrow = document.createTextNode("+");
+    const contentArrow = document.createTextNode(" ");
     arrow.appendChild(contentArrow);
     arrow.classList.add("mobile-opener");
     // itemSubmenu[i].style.position = "relative";
@@ -115,7 +118,7 @@
     }, 200);
   }
 
-  if (window.screen.width < 768) {
+  if (window.screen.width > 768) {
     if (document.querySelector(".h-extra__form__wrap")) {
       document.querySelector(".h-extra__form__wrap").addEventListener("click", function () {
         document.querySelector(".js-toggler-form").classList.toggle("active");

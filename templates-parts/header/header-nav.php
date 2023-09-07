@@ -1,6 +1,5 @@
 <nav class="navbar__navigation js-navbar__navigation">
 	<div class="mobile-heder-slider">
-		<?php get_template_part('templates-parts/header/header', 'brand'); ?>
 		<div class="navbar__toggler js-navbar__toggler--close active">
 			<div class="navbar__toggler__btn">
 				<span></span>
