@@ -6,6 +6,7 @@
   const nav = document.querySelector(".js-navbar__navigation");
   const heightHeader = document.querySelector("#header");
   const navbar = document.querySelector("#navbar");
+  const itemSubmenu = document.querySelectorAll(".js-navbar__navigation  .menu-item-has-children");
   let navFlag = false;
 
   togglerNav.addEventListener("click", () => {
@@ -19,6 +20,7 @@
       nav.classList.remove("active");
       togglerNav.classList.remove("active");
       // document.querySelector("body").classList.remove("active");
+      closeSbMenu();
       navbar.classList.remove("subclass");
       navFlag = false;
     }
@@ -68,7 +70,7 @@
   });
 
   // navbarMobile
-  const itemSubmenu = document.querySelectorAll(".js-navbar__navigation  .menu-item-has-children");
+
   for (let i = 0; i < itemSubmenu.length; i++) {
     const arrow = document.createElement("div");
     const contentArrow = document.createTextNode(" ");
@@ -81,7 +83,11 @@
       itemSubmenu[i].classList.toggle("active");
     });
   }
-
+  function closeSbMenu() {
+    for (let i = 0; i < itemSubmenu.length; i++) {
+      itemSubmenu[i].classList.remove("active");
+    }
+  }
   // footer
   const calaps = document.querySelectorAll(".calaps");
   for (let i = 0; i < calaps.length; i++) {
