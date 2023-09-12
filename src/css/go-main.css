@@ -1869,6 +1869,14 @@ body.active {
   width: calc(100% - 30px);
   height: calc(100% - 30px);
 }
+.booking-car--large .infoPromo {
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: #e2ffe2;
+  background-color: #f2f2f2;
+  margin-bottom: 20px;
+  width: 100%;
+}
 
 .booking-car--small {
   margin-bottom: 15px;

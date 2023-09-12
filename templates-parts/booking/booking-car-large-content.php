@@ -38,6 +38,55 @@ $ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
 
 $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
 
+$promoOd = $prices['wartosci_promocji']['od'];
+$promoDo = $prices['wartosci_promocji']['do'];
+
+$start = new DateTime($promoOd);
+$end = new DateTime($promoDo);
+$interval = $start->diff($end);
+$iloscDni = $interval->days;
+
+$wyswietlDni = '0 dni';
+if($iloscDni == 1) {
+$wyswietlDni = '1 dzień';
+} else {
+    $wyswietlDni = $iloscDni . ' dni';
+}
+
+$cenaPoRabacie = NULL;
+$cenaPrzedRabatem = NULL;
+if($iloscDni > 0 && $iloscDni <= 4) {
+    // $prices['1-4_dni']
+   $cenaPrzedRabatem = $prices['1-4_dni'] * $iloscDni;
+   $cenaPoRabacie = $cenaPrzedRabatem - ($ofertProcent / 100) * $cenaPrzedRabatem ;
+
+   $cenaPoRabacie = floor($cenaPoRabacie);
+
+} elseif ($iloscDni > 4 && $iloscDni <= 14 ) {
+
+   $cenaPrzedRabatem = $prices['5-14_dni'] * $iloscDni;
+    $cenaPoRabacie = $cenaPrzedRabatem - ($ofertProcent / 100) * $cenaPrzedRabatem ;
+   $cenaPoRabacie = floor($cenaPoRabacie);
+
+} elseif($iloscDni > 14 && $iloscDni <= 29) {
+
+   $cenaPrzedRabatem = $prices['15+_dni'] * $iloscDni;
+    $cenaPoRabacie = $cenaPrzedRabatem - ($ofertProcent / 100) * $cenaPrzedRabatem ;
+   $cenaPoRabacie = floor($cenaPoRabacie);
+
+} elseif($iloscDni > 29 ) {
+    $cenaPrzedRabatem = ($prices['miesiac']/30) * $iloscDni;
+     $cenaPoRabacie = $cenaPrzedRabatem - ($ofertProcent / 100) * $cenaPrzedRabatem ;
+    $cenaPoRabacie = floor($cenaPoRabacie); 
+}
+
+
+if($infoPromo){
+    $inf  =  $infoPromo ? '<div class="info-promo" style="color: green; font-weight: 500; margin-bottom:20px;">' . $infoPromo . '</div>' : false;
+} else {
+    $inf =  '<div class="infoPromo"> <p>Jeśli wynajmiesz pojazd od <span> ' . $promoOd . ' </span> do <span> ' . $promoDo . ' </span> ('. $wyswietlDni .') otrzymasz <span> ' . $ofertProcent . '% RABATU! </span></p> <p>Koszt najmu: <small>' . $cenaPrzedRabatem . ' zł </small><span>' . $cenaPoRabacie . ' zł </span></p></div>';
+}
+
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('car-list'); ?>>
@@ -151,7 +200,7 @@ $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
             <?php endif; ?>
             </li>
         </ul>
-        <?php echo $infoPromo ? '<p class="info-promo">' . $infoPromo . '</p>' : false; ?>
+        <?php echo  $inf; ?>
 
     </div>
     <div class="content-price">
