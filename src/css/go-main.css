@@ -301,7 +301,8 @@ body.active {
 @media only screen and (max-width: 768px) {
   .f__main .calaps.active .calaps__list {
     display: block;
-    padding: 10px 20px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
   }
 }
 .f__main .title-menu {
@@ -315,7 +316,7 @@ body.active {
 }
 @media only screen and (max-width: 768px) {
   .f__main .title-menu {
-    margin: 20px 10px;
+    margin: 5px 10px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -3944,6 +3945,7 @@ body.active {
   background-color: #f2f2f2;
   margin-bottom: 20px;
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 .infoPromo p {
   margin: 0;
@@ -3955,6 +3957,7 @@ body.active {
 .infoPromo p:nth-child(2) {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   font-size: 18px;
   font-weight: 500;

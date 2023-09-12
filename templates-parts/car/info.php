@@ -17,6 +17,7 @@ $ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
 $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
 $infoPromo = $prices['info_promocji'];
 
+if($ofert) { 
 $promoOd = $prices['wartosci_promocji']['od'];
 $promoDo = $prices['wartosci_promocji']['do'];
 
@@ -65,7 +66,7 @@ if($infoPromo){
 } else {
     $inf =  '<div class="infoPromo"> <p>Jeśli wynajmiesz pojazd od <span> ' . $promoOd . ' </span> do <span> ' . $promoDo . ' </span> ('. $wyswietlDni .') otrzymasz <span> ' . $ofertProcent . '% RABATU! </span></p> <p>Koszt najmu: <small>' . $cenaPrzedRabatem . ' zł </small><span>' . $cenaPoRabacie . ' zł </span></p></div>';
 }
-
+}
 // Jeśli wynajmiesz pojazd dziś do godziny 23:59 i zdasz za 4 dni koszt najmu to 1616.4 zł (-10%)!
 ?>
 

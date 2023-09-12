@@ -68,7 +68,8 @@
     .calaps__list {
       @media #{$sm} {
         display: block;
-        padding: 10px 20px;
+        padding: 5px 10px;
+        margin-bottom: 20px;
       }
     }
   }
@@ -81,7 +82,7 @@
     margin-bottom: 20px;
     position: relative;
     @media #{$sm} {
-      margin: 20px 10px;
+      margin: 5px 10px;
     }
     &:after {
       @media #{$sm} {

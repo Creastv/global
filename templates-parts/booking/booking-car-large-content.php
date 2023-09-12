@@ -38,6 +38,7 @@ $ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
 
 $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
 
+if($ofert ) {
 $promoOd = $prices['wartosci_promocji']['od'];
 $promoDo = $prices['wartosci_promocji']['do'];
 
@@ -86,7 +87,7 @@ if($infoPromo){
 } else {
     $inf =  '<div class="infoPromo"> <p>Jeśli wynajmiesz pojazd od <span> ' . $promoOd . ' </span> do <span> ' . $promoDo . ' </span> ('. $wyswietlDni .') otrzymasz <span> ' . $ofertProcent . '% RABATU! </span></p> <p>Koszt najmu: <small>' . $cenaPrzedRabatem . ' zł </small><span>' . $cenaPoRabacie . ' zł </span></p></div>';
 }
-
+}
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('car-list'); ?>>
