@@ -1,98 +1,106 @@
 <?php 
 $prices = get_field( 'cena', get_the_ID() );
 $opis = get_field( 'opis', get_the_ID() );
-
-
 $kaucja = $prices['kaucja'];
 
 $priceFrom = $prices['miesiac'];
-$ofert = $prices['czy_pojazd_jest_objety_promocja'];
-$infoPromo = $prices['info_promocji'];
-    
-if($ofert) {
-    $ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
-    $ofertScal = $prices['wartosci_promocji']['przedzial_czasowy_objety_promocja'];
-
-
-    switch ($ofertScal) {
-        case '1-4 dni':
-            $pr = $prices['1-4_dni'] * $ofertProcent/100;
-            $offertPriceFrom = floor($prices['1-4_dni'] - $pr);
-            break;
-        case '5-14 dni':
-            $pr = $prices['5-14_dni']  * $ofertProcent/100;
-            $offertPriceFrom = floor($prices['5-14_dni'] - $pr);
-            break;
-        case '15+ dni':
-            $pr = $prices['15+_dni']  * $ofertProcent/100;
-             $offertPriceFrom = floor($prices['15+_dni'] - $pr);
-            break;
-        case 'Miesiąc';
-            $pr = $prices['miesiac'] * $ofertProcent/100;
-            $pr = $prices['miesiac'] - $pr;
-            $pr = $pr / 30;
-            $offertPriceFrom = floor($pr);
-        break;
-    }
+if($prices['miesiac']){
+    $priceFrom = $prices['miesiac'] / 30;
+    $priceFrom = floor($priceFrom);
+} else {
+    $priceFrom = $prices['1-4_dni'] / 4;
+    $priceFrom = floor($priceFrom);
 }
 
+$ofert = $prices['czy_pojazd_jest_objety_promocja'];
+$ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
 $dopisek = ' <small>Cena przy wynajmie<br>powyżej 30 dni</small>';
- if($ofert){
-    if(floor($priceFrom / 30) > $offertPriceFrom  ){
-        $priceFrom = '<div><small> ' . floor($priceFrom / 30) . ' zł </small>' . $offertPriceFrom . ' zł </div>';
-    } else {
-        $priceFrom = floor($priceFrom / 30) . ' zł';
-    }
- } else {
-     if(is_numeric($priceFrom)){
-        $priceFrom = floor($priceFrom / 30) . ' zł';
-    } else {
-        $priceFrom = $prices['1-4_dni'] . ' zł';
+$infoPromo = $prices['info_promocji'];
 
-    }
- }
+$promoOd = $prices['wartosci_promocji']['od'];
+$promoDo = $prices['wartosci_promocji']['do'];
+
+$start = new DateTime($promoOd);
+$end = new DateTime($promoDo);
+$interval = $start->diff($end);
+$iloscDni = $interval->days;
+
+$wyswietlDni = '0 dni';
+if($iloscDni == 1) {
+$wyswietlDni = '1 dzień';
+} else {
+    $wyswietlDni = $iloscDni . ' dni';
+}
+
+$cenaPoRabacie = NULL;
+$cenaPrzedRabatem = NULL;
+if($iloscDni > 0 && $iloscDni <= 4) {
+    // $prices['1-4_dni']
+   $cenaPrzedRabatem = $prices['1-4_dni'] * $iloscDni;
+   $cenaPoRabacie = $cenaPrzedRabatem - ($ofertProcent / 100) * $cenaPrzedRabatem ;
+
+   $cenaPoRabacie = floor($cenaPoRabacie);
+
+} elseif ($iloscDni > 4 && $iloscDni <= 14 ) {
+
+   $cenaPrzedRabatem = $prices['5-14_dni'] * $iloscDni;
+    $cenaPoRabacie = $cenaPrzedRabatem - ($ofertProcent / 100) * $cenaPrzedRabatem ;
+   $cenaPoRabacie = floor($cenaPoRabacie);
+
+} elseif($iloscDni > 14 && $iloscDni <= 29) {
+
+   $cenaPrzedRabatem = $prices['15+_dni'] * $iloscDni;
+    $cenaPoRabacie = $cenaPrzedRabatem - ($ofertProcent / 100) * $cenaPrzedRabatem ;
+   $cenaPoRabacie = floor($cenaPoRabacie);
+
+} elseif($iloscDni > 29 ) {
+    $cenaPrzedRabatem = ($prices['miesiac']/30) * $iloscDni;
+     $cenaPoRabacie = $cenaPrzedRabatem - ($ofertProcent / 100) * $cenaPrzedRabatem ;
+    $cenaPoRabacie = floor($cenaPoRabacie); 
+}
+
+
+if($infoPromo){
+    $inf  =  $infoPromo ? '<div class="info-promo" style="color: green; font-weight: 500; margin-bottom:20px;">' . $infoPromo . '</div>' : false;
+} else {
+    $inf =  '<div class="infoPromo"> <p>Jeśli wynajmiesz pojazd od <span> ' . $promoOd . ' </span> do <span> ' . $promoDo . ' </span> ('. $wyswietlDni .') otrzymasz <span> ' . $ofertProcent . '% RABATU! </span></p> <p>Koszt najmu: <small>' . $cenaPrzedRabatem . ' zł </small><span>' . $cenaPoRabacie . ' zł </span></p></div>';
+}
+
+// Jeśli wynajmiesz pojazd dziś do godziny 23:59 i zdasz za 4 dni koszt najmu to 1616.4 zł (-10%)!
 ?>
 
 <div class="car-info-price">
+    <?php echo $inf; ?>
+    <?php // echo $infoPromo ? '<p class="info-promo" style="color: green; font-weight: 500;">' . $infoPromo . '</p>' : false; ?>
     <div class="car-price">
         <div class="left">
         <ul class="car-prices">
             <li class="price">
-            <?php if($prices['1-4_dni']) : ?>
-                <p><?php echo $prices['1-4_dni']; ?> zł</p>
+                <p><?php echo $prices['1-4_dni'] ? $prices['1-4_dni'] . ' zł' : "---"; ?></p>
                 <span>1-4 dni</span>
-            <?php endif; ?>
             </li>
             <li class="price">
-            <?php if($prices['5-14_dni']) : ?>
-                <p><?php echo $prices['5-14_dni']; ?> zł</p>
+                <p><?php echo $prices['5-14_dni'] ? $prices['5-14_dni'] . ' zł' : "---"; ?></p>
                 <span>5-14 dni</span>
-            <?php endif; ?>
             </li>
             <li class="price">
-            <?php if($prices['15+_dni']) : ?>
-                <p><?php echo $prices['15+_dni']; ?> zł</p>
+                <p><?php echo $prices['15+_dni'] ? $prices['15+_dni'] . ' zł' : "---"; ?></p>
                 <span>15+ dni</span>
-            <?php endif; ?>
             </li>
             <li class="price">
-            <?php if($prices['miesiac']) : ?>
-                <p><?php echo $prices['miesiac']; ?> zł</p>
+                <p><?php echo $prices['miesiac'] ? $prices['miesiac'] . ' zł' : "---"; ?></p>
                 <span>Miesiąć</span>
-            <?php endif; ?>
             </li>
         </ul>
         </div>
         <div class="right">
             <div class="car-price-from">
                 <span>Cena już od:</span>
-                <span class="price"><?php echo $priceFrom; ?></span>
+                <span class="price"><?php echo $priceFrom; ?> zł</span>
                 <span>Kaucja: <b><?php echo $kaucja; ?></b></span>
                 <?php echo $dopisek;?>
-                
             </div>
         </div>
-        <?php echo $infoPromo ? '<p class="info-promo">' . $infoPromo . '</p>' : false; ?>
     </div>
     <div class="car-info">
         <ul>

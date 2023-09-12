@@ -502,7 +502,7 @@ body.active {
 #header-bottom .ornament-wrap {
   overflow: hidden;
   position: absolute;
-  width: 90%;
+  width: 100%;
   height: 100%;
   top: 0px;
   right: 0;
@@ -517,7 +517,7 @@ body.active {
 }
 @media only screen and (max-width: 768px) {
   #header-bottom .ornament {
-    right: initial;
+    right: 0;
     opacity: 1;
   }
 }
@@ -1979,6 +1979,16 @@ body.active {
 .booking-page__resume__details .from-to-price .price span:nth-child(1),
 .booking-page__resume__details .extras .extra-item--price span:nth-child(1) {
   font-size: 18px;
+}
+.booking-page__resume__details .from-to-price .disc {
+  text-align: right;
+  padding: 10px 0;
+}
+.booking-page__resume__details .from-to-price .disc small {
+  width: 100%;
+  text-align: right;
+  display: block;
+  color: green;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3916,4 +3926,36 @@ body.active {
 .fancybox__button--thumbs,
 .fancybox__counter {
   display: none;
+}
+
+.infoPromo {
+  padding: 5px 10px;
+  border: 5px solid #fff;
+  border-radius: 6px;
+  background: #e2ffe2;
+  background-color: #f2f2f2;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+.infoPromo p {
+  margin: 0;
+  padding: 0;
+}
+.infoPromo p:nth-child(1) span {
+  font-weight: 700;
+}
+.infoPromo p:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.infoPromo p:nth-child(2) small {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.infoPromo p:nth-child(2) span {
+  color: green;
+  font-weight: 700;
 }/*# sourceMappingURL=go-main.css.map */

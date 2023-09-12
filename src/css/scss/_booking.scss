@@ -184,6 +184,16 @@
   .extras .extra-item--price span:nth-child(1) {
     font-size: 18px;
   }
+  .from-to-price .disc {
+    text-align: right;
+    padding: 10px 0;
+    small {
+      width: 100%;
+      text-align: right;
+      display: block;
+      color: green;
+    }
+  }
 }
 .deposit {
   br {

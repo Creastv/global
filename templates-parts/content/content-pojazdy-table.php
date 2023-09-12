@@ -17,69 +17,34 @@ switch($liczbaKomentarzy){
     $rewiev = 'komentarzy';
     break;
 };
-
 $kaucja = $prices['kaucja'];
-
 $priceFrom = $prices['miesiac'];
-$ofert = $prices['czy_pojazd_jest_objety_promocja'];
-$infoPromo = $prices['info_promocji'];
-    
-if($ofert) {
-    $ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
-    $ofertScal = $prices['wartosci_promocji']['przedzial_czasowy_objety_promocja'];
-
-
-    switch ($ofertScal) {
-        case '1-4 dni':
-            $pr = $prices['1-4_dni'] * $ofertProcent/100;
-            $offertPriceFrom = floor($prices['1-4_dni'] - $pr);
-            break;
-        case '5-14 dni':
-            $pr = $prices['5-14_dni']  * $ofertProcent/100;
-            $offertPriceFrom = floor($prices['5-14_dni'] - $pr);
-            break;
-        case '15+ dni':
-            $pr = $prices['15+_dni']  * $ofertProcent/100;
-             $offertPriceFrom = floor($prices['15+_dni'] - $pr);
-            break;
-        case 'Miesiąc';
-            $pr = $prices['miesiac'] * $ofertProcent/100;
-            $pr = $prices['miesiac'] - $pr;
-            $pr = $pr / 30;
-            $offertPriceFrom = floor($pr);
-        break;
-    }
+$priceFrom = $prices['miesiac'];
+if($prices['miesiac']){
+    $priceFrom = $prices['miesiac'] / 30;
+    $priceFrom = floor($priceFrom);
+} else {
+    $priceFrom = $prices['1-4_dni'] / 4;
+    $priceFrom = floor($priceFrom);
 }
 
-$dopisek = ' <small>Cena przy wynajmie<br> powyżej 30 dni</small>';
- if($ofert){
-    if(floor($priceFrom / 30) > $offertPriceFrom  ){
-        $priceFrom = '<div><small> ' . floor($priceFrom / 30) . ' zł </small>' . $offertPriceFrom . ' zł </div>';
-    } else {
-        $priceFrom = floor($priceFrom / 30) . ' zł';
-    }
- } else {
-     if(is_numeric($priceFrom)){
-        $priceFrom = floor($priceFrom / 30) . ' zł';
-    } else {
-        $priceFrom = $prices['1-4_dni'] . ' zł';
-
-    }
- }
+$ofert = $prices['czy_pojazd_jest_objety_promocja'];
+$ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
+$infoPromo = $prices['info_promocji'];
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('car-list'); ?>>
     <header>
         <a href="<?php the_permalink(); ?>">
             <?php echo $ofert == true ? '<span class="label">Promocja -' . $ofertProcent . '% </span>' : false; ?>
             <?php echo wp_get_attachment_image( $imgFutured, 'medium' ); ?>
-           
         </a>
     </header>
     <div class="content">
         <div class="title">
         <h2 class="entry-title"><a class="js-poj" data-id="<?php the_ID(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?> </a></h2>
-        <?php    echo ci_comment_rating_display_average_rating( $post->ID); ?>
+        <?php   echo ci_comment_rating_display_average_rating( $post->ID); ?>
         </div>
+         <?php echo $infoPromo ? '<p class="info-promo" style="color: green; font-weight: 500;">' . $infoPromo . '</p>' : false; ?>
         <ul class="car-info">
         <?php if($opis['moc']) : ?>
             <li>
@@ -144,48 +109,36 @@ $dopisek = ' <small>Cena przy wynajmie<br> powyżej 30 dni</small>';
         </ul>
         <ul class="car-price">
             <li class="price">
-            <?php if($prices['1-4_dni']) : ?>
-                <p><?php echo $prices['1-4_dni']; ?> zł/dzień</p>
+                <p><?php echo $prices['1-4_dni'] ? $prices['1-4_dni'] . ' zł/dzień' : "---"; ?> </p>
                 <span>1-4 dni</span>
-            <?php endif; ?>
             </li>
             <li class="price">
-            <?php if($prices['5-14_dni']) : ?>
-                <p><?php echo $prices['5-14_dni']; ?> zł/dzień</p>
+                <p><?php echo $prices['5-14_dni'] ? $prices['5-14_dni'] . ' zł/dzień' : "---";  ?> </p>
                 <span>5-14 dni</span>
-            <?php endif; ?>
             </li>
             <li class="price">
-            <?php if($prices['15+_dni']) : ?>
-                <p><?php echo $prices['15+_dni']; ?> zł/dzień</p>
+                <p><?php echo $prices['15+_dni'] ? $prices['15+_dni'] . ' zł/dzień' : "---";  ?> </p>
                 <span>15+ dni</span>
-            <?php endif; ?>
             </li>
             <li class="price">
-            <?php if($prices['miesiac']) : ?>
-                <p><?php echo $prices['miesiac']; ?> zł</p>
+                <p><?php echo $prices['miesiac'] ? $prices['miesiac'] . ' zł' : "---"; ?></p>
                 <span>Miesiąć</span>
-            <?php endif; ?>
             </li>
             <li class="price">
-            <?php if($prices['kaucja']) : ?>
+                <?php if($prices['kaucja']) : ?>
                 <p><?php echo $prices['kaucja']; ?> zł</p>
                 <span>Kaucja</span>
-            <?php endif; ?>
+                <?php endif; ?>
             </li>
         </ul>
-        <?php echo $infoPromo ? '<p class="info-promo">' . $infoPromo . '</p>' : false; ?>
-
     </div>
     <div class="content-price">
         <div class="content-price__wrap">
         <span>Cena już od:</span>
-        <span class="price"><?php echo $priceFrom; ?></span>
+        <span class="price"><?php echo $priceFrom; ?> zł</span>
         <span>Kaucja: <b><?php echo $kaucja; ?></b></span>
-        <?php echo $dopisek;?>
+        <small>Cena przy wynajmie<br> powyżej 30 dni</small>
         <a class="btn-revers btn--small js-poj" data-id="<?php the_ID(); ?>" href="<?php echo $linkBooking; ?>">Zarezerwuj</a>
-        
-        <!-- <a class="read-more" href="<?php the_permalink(); ?>">Czytaj więcej</a> -->
         </div>
     </div>
 </article>

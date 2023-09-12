@@ -5,12 +5,20 @@ $kaucja = $prices['kaucja'];
 
 $ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
 $ofertProcent = $ofertProcent == false ? 0 : $ofertProcent;
-$ofertDiscPart = $prices['wartosci_promocji']['przedzial_czasowy_objety_promocja'];
+
 $promo = $prices['czy_pojazd_jest_objety_promocja'];
 $promo = $promo[0] == 'tak' ? 'true' : 'false';
 
+$promoOd = $prices['wartosci_promocji']['od'];
+$promoDo = $prices['wartosci_promocji']['do'];
+
+
+$start = new DateTime($promoOd);
+$end = new DateTime($promoDo);
+$interval = $start->diff($end);
+$iloscDni = $interval->days;
 ?>
-<div class="booking-page__resume__details" data-pro="<?php echo $promo; ?>" data-discpart="<?php echo $ofertDiscPart; ?>" data-disc="<?php echo $ofertProcent; ?>" data-priceone="<?php echo $prices['1-4_dni']; ?>" data-pricetwo="<?php echo $prices['5-14_dni']; ?>" data-pricetree="<?php echo $prices['15+_dni']; ?>" data-pricefour="<?php echo $prices['miesiac']; ?>" >
+<div class="booking-page__resume__details" data-pro="<?php echo $promo; ?>" data-days="<?php echo $iloscDni; ?>" data-start="<?php echo $promoOd; ?>" data-end="<?php echo $promoDo; ?>" data-disc="<?php echo $ofertProcent; ?>" data-priceone="<?php echo $prices['1-4_dni']; ?>" data-pricetwo="<?php echo $prices['5-14_dni']; ?>" data-pricetree="<?php echo $prices['15+_dni']; ?>" data-pricefour="<?php echo $prices['miesiac']; ?>" >
     <?php get_template_part( 'templates-parts/booking/booking-car', 'small' ); ?>
 
     <div class="box deposit">
@@ -19,7 +27,6 @@ $promo = $promo[0] == 'tak' ? 'true' : 'false';
             <span class="deposit-value"><b><?php echo $kaucja ? $kaucja : '0'; ?> zł</b></span>
         </div>
     </div>
-    
     <div class="box from-to-price">
         <?php if(isset($_COOKIE['carID'])) : ?>
         <div class="item from">
@@ -35,19 +42,12 @@ $promo = $promo[0] == 'tak' ? 'true' : 'false';
             <span> Cena najmu: </span>
             <span class="price-value">0 zł</span>
         </div>
+        <div class="disc">
+           
+        </div>
     </div>
-    
-  
     <div class="box extras">
         <?php if(isset($_COOKIE['carID'])) : ?>
-        <!-- <div class="item extra-item">
-            <span class="extra-item">Zwrot pojazdu w dowolnym miejscu w Warszawie. Nie dotyczy siedziby firmy.</span>
-            <span class="extra-item__price"><b>50 zł</b></span>
-        </div>
-        <div class="item extra-item">
-            <span class="extra-item">Zwrot pojazdu w dowolnym miejscu w Warszawie. Nie dotyczy siedziby firmy.</span>
-            <span class="extra-item__price"><b>50 zł</b></span>
-        </div> -->
         <?php endif; ?>
          <div class="item extra-item extra-item--price">
             <span> Dodatki: </span>

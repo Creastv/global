@@ -3,33 +3,8 @@ $terms = get_the_terms(get_the_ID() , 'Typ' );
 $prices = get_field( 'cena', get_the_ID() );
 $priceFrom = $prices['miesiac'];
 $ofert = $prices['czy_pojazd_jest_objety_promocja'];
-
-if($ofert) {
-    $ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
-    $ofertScal = $prices['wartosci_promocji']['przedzial_czasowy_objety_promocja'];
-
-    switch ($ofertScal) {
-        case '1-4 dni':
-            $pr = $prices['1-4_dni'] * $ofertProcent/100;
-            $offertPriceFrom = floor($prices['1-4_dni'] - $pr);
-            break;
-        case '5-14 dni':
-            $pr = $prices['5-14_dni']  * $ofertProcent/100;
-            $offertPriceFrom = floor($prices['5-14_dni'] - $pr);
-            break;
-        case '15+ dni':
-            $pr = $prices['15+_dni']  * $ofertProcent/100;
-             $offertPriceFrom = floor($prices['15+_dni'] - $pr);
-            break;
-        case 'Miesiąc';
-            $pr = $prices['miesiac'] * $ofertProcent/100;
-            $pr = $prices['miesiac'] - $pr;
-            $pr = $pr / 30;
-            $offertPriceFrom = floor($pr);
-        break;
-    }
-}
-
+$ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
+$infoPromo = $prices['info_promocji'];
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="single-car hentry">
@@ -51,7 +26,6 @@ if($ofert) {
             <div class="opinie">
                  <div class="col-lg-12">
                     <?php
-                    // echo do_shortcode('[stars_rating_avg]');
                     echo ci_comment_rating_display_average_rating( $post->ID);
                     ?>
                 </div>

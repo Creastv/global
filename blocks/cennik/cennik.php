@@ -46,33 +46,7 @@ $cars = new WP_Query( array(
 
     $ofert = $prices['czy_pojazd_jest_objety_promocja'];
     $infoPromo = $prices['info_promocji'];
-        
-    if($ofert) {
-        $ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
-        $ofertScal = $prices['wartosci_promocji']['przedzial_czasowy_objety_promocja'];
-
-
-        switch ($ofertScal) {
-            case '1-4 dni':
-                $pr = $prices['1-4_dni'] * $ofertProcent/100;
-                $offertPriceFrom = floor($prices['1-4_dni'] - $pr);
-                break;
-            case '5-14 dni':
-                $pr = $prices['5-14_dni']  * $ofertProcent/100;
-                $offertPriceFrom = floor($prices['5-14_dni'] - $pr);
-                break;
-            case '15+ dni':
-                $pr = $prices['15+_dni']  * $ofertProcent/100;
-                $offertPriceFrom = floor($prices['15+_dni'] - $pr);
-                break;
-            case 'Miesiąc';
-                $pr = $prices['miesiac'] * $ofertProcent/100;
-                $pr = $prices['miesiac'] - $pr;
-                $pr = $pr / 30;
-                $offertPriceFrom = floor($pr);
-            break;
-        }
-    }
+    $ofertProcent =  $prices['wartosci_promocji']['wysokosc_rabatu_w_%'];
 
     ?>
     <tr>
@@ -82,11 +56,10 @@ $cars = new WP_Query( array(
         </td>
         <td class="title">
             <a href="<?php the_permalink(); ?>">
-            <h3><?php the_title(); ?></h3>
+             <h3><?php the_title(); ?></h3>
              <?php echo $ofert == true ? '<span class="label label--table">Promocja -' . $ofertProcent . '% </span>' : false; ?>
              </a>
-            </br>
-
+</br>
             <ul class="table-info">
                 <?php if($opis['moc']) : ?>
                 <li>
@@ -152,28 +125,20 @@ $cars = new WP_Query( array(
             </ul>
         </td>
         <td class="price">
-        <?php if($prices['1-4_dni']) : ?>
-            <p><?php echo $prices['1-4_dni']; ?> zł/dzień</p>
+            <p><?php echo $prices['1-4_dni'] ? $prices['1-4_dni'] . ' zł/dzień' : "---"; ?> </p>
             <span>1-4 dni</span>
-        <?php endif; ?>
         </td>
         <td class="price">
-        <?php if($prices['5-14_dni']) : ?>
-            <p><?php echo $prices['5-14_dni']; ?> zł/dzień</p>
+            <p><?php echo $prices['5-14_dni'] ? $prices['5-14_dni'] . ' zł/dzień' : "---";  ?> </p>
             <span>5-14 dni</span>
-        <?php endif; ?>
         </td>
         <td class="price">
-        <?php if($prices['15+_dni']) : ?>
-            <p><?php echo $prices['15+_dni']; ?> zł/dzień</p>
+            <p><?php echo $prices['15+_dni'] ? $prices['15+_dni'] . ' zł/dzień' : "---";  ?> </p>
             <span>15+ dni</span>
-        <?php endif; ?>
         </td>
         <td class="price">
-        <?php if($prices['miesiac']) : ?>
-            <p><?php echo $prices['miesiac']; ?> zł</p>
+            <p><?php echo $prices['miesiac'] ? $prices['miesiac'] . ' zł' : "---"; ?></p>
             <span>Miesiąć</span>
-        <?php endif; ?>
         </td>
         <td class="price">
         <?php if($prices['kaucja']) : ?>
@@ -187,7 +152,5 @@ $cars = new WP_Query( array(
     </tr>
     <?php endwhile; wp_reset_query(); ?>
 </tbody>
-
 </table>
-
 </div>

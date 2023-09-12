@@ -95,7 +95,9 @@ const priceTree = document.querySelector(".booking-page__resume__details").getAt
 const priceFour = document.querySelector(".booking-page__resume__details").getAttribute("data-pricefour");
 
 const discountPro = document.querySelector(".booking-page__resume__details").getAttribute("data-disc");
-const discpart = document.querySelector(".booking-page__resume__details").getAttribute("data-discpart");
+const discStart = document.querySelector(".booking-page__resume__details").getAttribute("data-start");
+const dni = document.querySelector(".booking-page__resume__details").getAttribute("data-days");
+const discEnd = document.querySelector(".booking-page__resume__details").getAttribute("data-end");
 const hasPromo = document.querySelector(".booking-page__resume__details").getAttribute("data-pro");
 
 let priceRent = 0;
@@ -104,78 +106,58 @@ let priceRent = 0;
 
 function priceRentCalculator(days) {
   let stawka = "";
-  if (hasPromo == "true") {
-    inputDiscount.value = 0 + "%";
-    inputSave.value = 0 + " zł";
-    carPriceSave.innerHTML = "";
-  }
 
-  if (days >= 0 && days <= 4) {
-    stawka = priceOne;
-    priceRent = days * stawka;
+  // if (hasPromo == "true") {
+  //   inputDiscount.value = 0 + "%";
+  //   inputSave.value = 0 + " zł";
+  //   carPriceSave.innerHTML = "";
+  // }
 
-    if (hasPromo == "true") {
-      if (discpart == "1-4 dni") {
-        stawka = priceTwo;
-        disc = ((days * stawka) / 100) * discountPro;
-        priceRent = days * stawka - disc;
-        disc = Math.ceil(disc);
+  var dataOd = new Date(discStart);
+  dataOd = dataOd.getFullYear() + "-" + (dataOd.getMonth() + 1) + "-" + dataOd.getDate();
+  var dataDo = new Date(discEnd);
+  dataDo = dataDo.getFullYear() + "-" + (dataDo.getMonth() + 1) + "-" + dataDo.getDate();
 
-        inputDiscount.value = discountPro + "%";
-        inputSave.value = disc + " zł";
-        carPriceSave.innerHTML = "<span> Zaoszczędzasz: </span><span><b>" + disc + " zł = " + discountPro + "% </b></span>";
-      }
+  var formDataOd = new Date(inputGetFrom.value);
+  formDataOd = formDataOd.getFullYear() + "-" + (formDataOd.getMonth() + 1) + "-" + formDataOd.getDate();
+  var formDataDo = new Date(inputGetTo.value);
+  formDataDo = formDataDo.getFullYear() + "-" + (formDataDo.getMonth() + 1) + "-" + formDataDo.getDate();
+  var priceRentBefore;
+  let div = document.querySelector(".from-to-price .disc");
+
+  if (dataOd === formDataOd && dataDo === formDataDo) {
+    if (dni >= 0 && dni <= 4) {
+      stawka = priceOne;
+    } else if (dni > 4 && dni <= 15) {
+      stawka = priceTwo;
+    } else if (dni > 15 && dni <= 29) {
+      stawka = priceTree;
+    } else if (dni > 29) {
+      stawka = priceFour / 30;
     }
-  } else if (days > 4 && days <= 15) {
-    stawka = priceTwo;
-    priceRent = days * stawka;
 
-    if (hasPromo == "true") {
-      if (discpart == "5-14 dni") {
-        stawka = priceTwo;
-        disc = ((days * stawka) / 100) * discountPro;
-        priceRent = days * stawka - disc;
-        disc = Math.ceil(disc);
+    priceNormal = stawka * dni;
+    priceRent = priceNormal - (discountPro / 100) * priceNormal;
+    priceRentBefore = priceNormal - priceRent;
+    priceRentBefore = Math.ceil(priceRentBefore);
 
-        inputDiscount.value = discountPro + "%";
-        inputSave.value = disc + " zł";
-        carPriceSave.innerHTML = "<span> Zaoszczędzasz: </span><span><b>" + disc + " zł = " + discountPro + "% </b></span>";
-      }
-    }
-  } else if (days > 15 && days <= 29) {
-    stawka = priceTree;
-    priceRent = days * stawka;
-
-    if (hasPromo == "true") {
-      if (discpart == "15+_dni") {
-        stawka = priceTree;
-        disc = ((days * stawka) / 100) * discountPro;
-        priceRent = days * stawka - disc;
-        disc = Math.ceil(disc);
-
-        inputDiscount.value = discountPro + "%";
-        inputSave.value = disc + " zł";
-        carPriceSave.innerHTML = "<span> Zaoszczędzasz: </span><span><b>" + disc + " zł = " + discountPro + "% </b></span>";
-      }
-    }
-  } else if (days > 29) {
-    stawka = "" + priceFour / 30 + "";
-    priceRent = days * stawka;
-
-    if (hasPromo == "true") {
-      if (discpart == "Miesiąc") {
-        stawka = "" + priceFour / 30 + "";
-        disc = ((days * stawka) / 100) * discountPro;
-        priceRent = days * stawka - disc;
-        disc = Math.ceil(disc);
-
-        inputDiscount.value = discountPro + "%";
-        inputSave.value = disc + " zł";
-        carPriceSave.innerHTML = "<span> Zaoszczędzasz: </span><span><b>" + disc + " zł = " + discountPro + "% </b></span>";
-      }
+    div.innerHTML = `<small><span>Otrzymujesz </span><b> ${priceRentBefore} zł </b> Rabatu / (${discountPro}% ceny) <span></span></small> <small>Zapłaciłbyś: <b>${priceNormal} zł </b></small> `;
+  } else {
+    div.innerHTML = "";
+    if (days >= 0 && days <= 4) {
+      stawka = priceOne;
+      priceRent = days * stawka;
+    } else if (days > 4 && days <= 15) {
+      stawka = priceTwo;
+      priceRent = days * stawka;
+    } else if (days > 15 && days <= 29) {
+      stawka = priceTree;
+      priceRent = days * stawka;
+    } else if (days > 29) {
+      stawka = "" + priceFour / 30 + "";
+      priceRent = days * stawka;
     }
   }
-
   priceRent = Math.ceil(priceRent);
 
   if (priceRent > 0) {
