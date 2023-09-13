@@ -135,6 +135,11 @@
       z-index: 999999;
     }
   }
+  .booking-page__resume.disabled {
+    @media #{$md} {
+      display: none !important;
+    }
+  }
 }
 .booking-page__resume__details {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.09102);

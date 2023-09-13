@@ -1980,6 +1980,11 @@ body.active {
     z-index: 999999;
   }
 }
+@media only screen and (max-width: 998px) {
+  .booking-page .booking-page__resume.disabled {
+    display: none !important;
+  }
+}
 
 .booking-page__resume__details {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.09102);
