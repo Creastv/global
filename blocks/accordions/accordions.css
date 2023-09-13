@@ -69,6 +69,13 @@ strong {
   font-weight: 500;
 }
 
+.entry-content li {
+  color: #22242c;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #5c5e68;
+}
+
 li {
   font-size: 14px;
 }
@@ -97,7 +104,7 @@ a {
 }
 @media only screen and (max-width: 768px) {
   .entry-header {
-    padding: 50px 0 100px 0;
+    padding: 20px 0 50px 0;
   }
 }
 .entry-header .entry-title {
@@ -272,7 +279,6 @@ body.active {
 @media only screen and (max-width: 768px) {
   .faq .accordion .question {
     font-size: 16px;
-    line-height: 26px;
   }
 }
 .faq .accordion .question span {
@@ -331,7 +337,7 @@ body.active {
 }
 .faq .accordion.active .answer {
   height: auto;
-  padding: 0 24px 24px;
+  padding: 0 20px;
 }
 .faq ul {
   columns: 3;

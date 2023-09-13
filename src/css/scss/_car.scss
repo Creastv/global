@@ -207,6 +207,10 @@
   position: -webkit-sticky;
   position: sticky;
   top: 150px;
+  @media #{$sm} {
+    position: relative;
+    top: inherit;
+  }
 }
 
 .car-suggested {
@@ -442,6 +446,7 @@
     background-color: #fff;
     padding: 20px;
     top: -110%;
+    border-radius: 10px;
   }
   .go-modal__wraper {
   }
@@ -500,6 +505,41 @@
       width: 100%;
       font-size: 16px !important;
       white-space: break-spaces;
+    }
+  }
+}
+
+.questionary {
+  #respond {
+    padding: 50px 0;
+    @media #{$sm} {
+      padding: 20px 0;
+    }
+    input,
+    textarea {
+      width: 100%;
+      min-height: 55px;
+      height: 100%;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 6px;
+      border: 0;
+      border: 1px solid #dfdfdf;
+      outline: 0px;
+      transition: all 0.2s linear;
+    }
+    p {
+      margin: 0px;
+    }
+    .comment-form-cookies-consent {
+      display: flex;
+      align-items: center;
+      input {
+        width: 20px;
+      }
+    }
+    .form-submit {
+      margin-top: 50px;
     }
   }
 }

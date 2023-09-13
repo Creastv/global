@@ -9,6 +9,9 @@
   @media #{$md} {
     grid-template-columns: 1fr 1fr;
   }
+  @media #{$sm} {
+    gap: 10px;
+  }
 }
 
 .cars_wrap--grid.kol-2 {
@@ -21,6 +24,9 @@
   @media #{$md} {
     grid-template-columns: 1fr 1fr;
   }
+  @media #{$sm} {
+    gap: 10px;
+  }
 }
 
 .cars_wrap--grid.kol-3 {
@@ -32,6 +38,9 @@
   }
   @media #{$md} {
     grid-template-columns: 1fr 1fr;
+  }
+  @media #{$sm} {
+    gap: 10px;
   }
 }
 

@@ -75,7 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 10px;
+    padding: 10px 10px 0px 10px;
     @media #{$xxlg} {
       padding: 10px;
       flex-wrap: wrap;
@@ -154,7 +154,7 @@
   h1 {
     font-size: 38px;
     line-height: 37px;
-    padding: 50px 0 0;
+    // padding: 50px 0 0;
   }
 
   .img-wraper {

@@ -56,6 +56,7 @@
 .table-info li p {
   font-weight: 600;
   font-size: 12px !important;
+  line-height: 1;
   margin: 0;
   padding: 0;
 }

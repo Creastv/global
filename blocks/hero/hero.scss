@@ -34,13 +34,17 @@
         font-weight: 700;
         color: #fff;
         @media #{$sm} {
-          font-size: 28px;
-          line-height: 36px;
+          font-size: 21px;
+          line-height: 26px;
         }
       }
       p {
         color: #fff;
         font-size: 28px;
+        @media #{$sm} {
+          font-size: 18px;
+          // line-height: 26px;
+        }
       }
     }
   }
@@ -58,6 +62,9 @@
       display: block;
       padding: 10px;
       margin: 10px !important;
+      @media #{$sm} {
+        padding: 5px;
+      }
     }
     .swiper-pagination-bullet-active {
       background-color: $main;

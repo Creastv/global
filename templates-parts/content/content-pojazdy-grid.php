@@ -4,7 +4,7 @@ $prices = get_field( 'cena', get_the_ID() );
 $opis = get_field( 'opis', get_the_ID() );
 $liczbaKomentarzy = get_comments_number();
 $linkBooking = get_field( 'button_do_przejscia_do_rezerwacji', 'options' );
-
+$priceFrom = NULL;
 if($prices['miesiac']){
     $priceFrom = $prices['miesiac'] / 30;
     $priceFrom = floor($priceFrom);
